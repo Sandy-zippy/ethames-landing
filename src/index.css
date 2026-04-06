@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #061E43;
+  --color-navy-dark: #121C27;
+  --color-red: #ED1C24;
+  --color-body: #4B535D;
+  --color-white: #FFFFFF;
+
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-slab: "Roboto Slab", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-body);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, #061E43 40%, #ED1C24 100%);
+}
