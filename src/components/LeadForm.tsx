@@ -30,14 +30,28 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
     if (Object.keys(e).length === 0) {
       const utm = getUTMParams()
 
+      const payload = {
+        name: form.name,
+        phone: `+91${form.phone}`,
+        program: form.program,
+        city: form.city,
+        ...utm,
+        page_url: window.location.href,
+      }
+
+      // POST to form handler (GHL + Sheets)
+      fetch('FORM_HANDLER_URL', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        mode: 'no-cors',
+      }).catch(() => {})
+
       // Track GA4 conversion
       trackEvent('generate_lead', {
         event_category: 'form',
         event_label: form.program,
       })
-
-      // Log to console for now (webhook URLs will be added later)
-      console.log('Lead submitted:', { ...form, ...utm, submitted_at: new Date().toISOString() })
 
       setSubmitted(true)
     }
