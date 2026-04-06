@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import LogoMarquee from './components/LogoMarquee'
@@ -29,10 +29,10 @@ function Landing() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
