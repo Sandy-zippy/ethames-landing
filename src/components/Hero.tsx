@@ -3,7 +3,7 @@ import LeadForm from './LeadForm'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen pt-20 overflow-hidden">
+    <section className="relative min-h-screen pt-20 overflow-x-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -41,7 +41,7 @@ export default function Hero() {
               Admissions Open for 2026 Batch
             </motion.div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
               Built by Industry.{' '}
               <span className="text-gradient">Not by Academia.</span>
             </h1>

@@ -72,7 +72,7 @@ export default function CTA() {
                 <p className="text-sm font-medium text-gold tracking-widest uppercase mb-3">
                   Start Your Journey
                 </p>
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">
                   Admissions Are Open.
                   <br className="hidden sm:block" />
                   Apply in 3 Minutes.
@@ -116,7 +116,7 @@ export default function CTA() {
             <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
               Common Questions
             </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-navy">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy">
               Frequently Asked Questions
             </h2>
           </motion.div>

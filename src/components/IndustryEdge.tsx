@@ -83,7 +83,7 @@ export default function IndustryEdge() {
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
             Industry Partnerships
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
             Five Partners. Zero Textbook Theory.
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">

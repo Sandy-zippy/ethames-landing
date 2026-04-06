@@ -67,7 +67,7 @@ export default function Recognition() {
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
             Credentials
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
             Ranked. Recognized. Industry-Backed.
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
@@ -81,7 +81,7 @@ export default function Recognition() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mb-6"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-6"
         >
           {recognitions.slice(0, 5).map((rec) => (
             <motion.div

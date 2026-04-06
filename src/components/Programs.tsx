@@ -28,7 +28,7 @@ export default function Programs() {
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
             Academic Programs
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
             Pick a Career Track. Not Just a Degree.
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
@@ -38,7 +38,7 @@ export default function Programs() {
         </motion.div>
 
         {/* Featured Programs -- 3 large cards */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {featured.map((prog, i) => (
             <motion.div
               key={prog.name}

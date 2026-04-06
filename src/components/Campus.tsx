@@ -45,7 +45,7 @@ export default function Campus() {
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
             Our Campuses
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
             Built in Hyderabad.{' '}
             <span className="text-red">Built for Business.</span>
           </h2>
