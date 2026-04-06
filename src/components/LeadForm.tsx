@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
 import { programs } from '../data/programs'
+import { getUTMParams, trackEvent } from '../lib/tracking'
 
 interface LeadFormProps {
   variant?: 'light' | 'dark'
@@ -27,8 +28,18 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
     const e = validate()
     setErrors(e)
     if (Object.keys(e).length === 0) {
+      const utm = getUTMParams()
+
+      // Track GA4 conversion
+      trackEvent('generate_lead', {
+        event_category: 'form',
+        event_label: form.program,
+      })
+
+      // Log to console for now (webhook URLs will be added later)
+      console.log('Lead submitted:', { ...form, ...utm, submitted_at: new Date().toISOString() })
+
       setSubmitted(true)
-      // TODO: POST to backend
     }
   }
 
