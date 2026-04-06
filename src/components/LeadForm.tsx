@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
+import { CheckCircle2 } from 'lucide-react'
 import { programs } from '../data/programs'
 
 interface LeadFormProps {
@@ -32,25 +33,25 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
   }
 
   const isDark = variant === 'dark'
-  const inputBase = `w-full rounded-lg px-4 py-3 text-sm outline-none transition-all focus:ring-2 focus:ring-red ${
+  const inputBase = `w-full rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200 focus:ring-2 focus:ring-red/50 ${
     isDark
-      ? 'bg-white/10 text-white placeholder-white/50 border border-white/20'
+      ? 'bg-white/10 text-white placeholder-white/40 border border-white/15 backdrop-blur-sm'
       : 'bg-white text-navy-dark border border-gray-200 placeholder-gray-400'
   }`
-  const labelClass = `block text-xs font-medium mb-1 ${isDark ? 'text-white/80' : 'text-navy'}`
+  const labelClass = `block text-xs font-medium mb-1.5 ${isDark ? 'text-white/70' : 'text-navy'}`
 
   if (submitted) {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className={`rounded-2xl p-8 text-center ${isDark ? 'bg-white/10' : 'bg-green-50 border border-green-200'} ${className}`}
+        className={`rounded-2xl p-8 text-center ${isDark ? 'bg-white/10 backdrop-blur-sm' : 'bg-green-50 border border-green-200'} ${className}`}
       >
-        <div className="text-4xl mb-3">&#10003;</div>
-        <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-navy'}`}>
+        <CheckCircle2 className={`w-12 h-12 mx-auto mb-3 ${isDark ? 'text-green-400' : 'text-green-600'}`} />
+        <h3 className={`font-serif text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-navy'}`}>
           Application Received!
         </h3>
-        <p className={isDark ? 'text-white/70' : 'text-body'}>
+        <p className={isDark ? 'text-white/60' : 'text-body'}>
           Our admissions counsellor will call you within 24 hours.
         </p>
       </motion.div>
@@ -86,7 +87,7 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
       <div>
         <label className={labelClass}>Program of Interest</label>
         <select
-          className={`${inputBase} ${!form.program ? (isDark ? 'text-white/50' : 'text-gray-400') : ''}`}
+          className={`${inputBase} cursor-pointer ${!form.program ? (isDark ? 'text-white/40' : 'text-gray-400') : ''}`}
           value={form.program}
           onChange={(e) => setForm({ ...form, program: e.target.value })}
         >
@@ -116,12 +117,12 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
         type="submit"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full py-3.5 rounded-lg bg-red text-white font-semibold text-sm tracking-wide hover:bg-red/90 transition-colors cursor-pointer"
+        className="w-full py-3.5 rounded-lg bg-red text-white font-semibold text-sm tracking-wide hover:bg-red/90 transition-colors duration-200 cursor-pointer"
       >
-        Apply Now — Free Counselling
+        Apply Now
       </motion.button>
 
-      <p className={`text-[11px] text-center ${isDark ? 'text-white/40' : 'text-gray-400'}`}>
+      <p className={`text-[11px] text-center ${isDark ? 'text-white/30' : 'text-gray-400'}`}>
         No spam. Your data is secure and confidential.
       </p>
     </form>

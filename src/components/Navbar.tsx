@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 import logo from '../assets/logo.webp'
 
 export default function Navbar() {
@@ -21,13 +22,21 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-navy/5'
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <a href="#" className="flex-shrink-0">
-            <img src={logo} alt="eTHAMES Business School" className="h-10 sm:h-12 w-auto" />
+          <a href="#" className="flex-shrink-0 cursor-pointer">
+            <img
+              src={logo}
+              alt="Ethames Business School"
+              className={`h-10 sm:h-12 w-auto transition-all duration-300 ${
+                !scrolled ? 'brightness-0 invert' : ''
+              }`}
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-8">
@@ -35,31 +44,31 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-navy hover:text-red transition-colors"
+                className={`text-sm font-medium transition-colors duration-200 cursor-pointer ${
+                  scrolled
+                    ? 'text-navy hover:text-red'
+                    : 'text-white/90 hover:text-white'
+                }`}
               >
                 {l.label}
               </a>
             ))}
             <a
               href="#apply"
-              className="px-6 py-2.5 rounded-lg bg-red text-white text-sm font-semibold hover:bg-red/90 transition-colors"
+              className="px-6 py-2.5 rounded-lg bg-red text-white text-sm font-semibold hover:bg-red/90 transition-colors duration-200 cursor-pointer"
             >
               Apply Now
             </a>
           </div>
 
           <button
-            className="md:hidden p-2 text-navy"
+            className={`md:hidden p-2 cursor-pointer transition-colors ${
+              scrolled ? 'text-navy' : 'text-white'
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -70,7 +79,8 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+            transition={{ duration: 0.25 }}
+            className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-3">
               {links.map((l) => (
@@ -78,7 +88,7 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block text-sm font-medium text-navy hover:text-red transition-colors"
+                  className="block text-sm font-medium text-navy hover:text-red transition-colors cursor-pointer"
                 >
                   {l.label}
                 </a>
@@ -86,7 +96,7 @@ export default function Navbar() {
               <a
                 href="#apply"
                 onClick={() => setMobileOpen(false)}
-                className="block w-full text-center px-6 py-2.5 rounded-lg bg-red text-white text-sm font-semibold"
+                className="block w-full text-center px-6 py-2.5 rounded-lg bg-red text-white text-sm font-semibold cursor-pointer"
               >
                 Apply Now
               </a>

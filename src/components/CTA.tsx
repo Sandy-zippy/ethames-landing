@@ -1,27 +1,41 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
 import LeadForm from './LeadForm'
+import { WhatsAppLogo } from './icons/PartnerLogos'
 
 const faqs = [
   {
-    q: 'What are the eligibility criteria for BBA and BCA programs?',
-    a: 'Candidates must have completed 10+2 from a recognised board with a minimum of 50% aggregate marks. For BCA, Mathematics or Computer Science as a subject in 12th is preferred but not mandatory.',
+    q: 'What degree will I receive?',
+    a: "You receive a degree from Osmania University, one of India's established state universities. It is fully recognized by UGC. The degree is granted by Osmania University, not by Ethames directly.",
   },
   {
-    q: 'Is there an entrance exam?',
-    a: 'eTHAMES conducts its own aptitude assessment followed by a personal interview. No separate entrance exam like CET is required.',
+    q: 'Is the degree from Ethames or Osmania University?',
+    a: 'The degree is from Osmania University. Ethames is affiliated with Osmania University, so the degree you earn carries the full recognition and validity of an Osmania University qualification.',
+  },
+  {
+    q: 'Is Ethames recognized by UGC?',
+    a: 'Yes. Ethames is affiliated with Osmania University, which is UGC-recognized. Your degree carries the same validity as any Osmania University qualification.',
+  },
+  {
+    q: 'What programs are available?',
+    a: 'Ethames offers 7 programs across BBA and BCA. The flagship is BBA in Entrepreneurship & Startup Management with 120 seats. BCA programs include AI and Cybersecurity.',
+  },
+  {
+    q: 'What makes Ethames different from other colleges?',
+    a: 'The curriculum is built with KPMG, not copied from a university syllabus. Students access Coursera, Harvard Business Publishing case studies, and E-Labz incubation backed by IIIT Hyderabad and TiE.',
   },
   {
     q: 'What is the fee structure?',
-    a: 'Fees vary by program. Our admissions counsellor will share the detailed fee structure, scholarship options, and EMI plans during your counselling session.',
+    a: 'Our admissions team will share the detailed fee structure, scholarship options, and payment plans during your counselling session. Fill out the form above to get started.',
   },
   {
-    q: 'Do you offer hostel facilities?',
-    a: 'Yes. We have separate boys and girls hostels on campus with Wi-Fi, mess, laundry, and 24/7 security. Off-campus PG options are also available nearby.',
+    q: 'How do I apply?',
+    a: 'Fill out the form on this page. Our admissions team will call you within 24 hours to walk you through programs, fees, and next steps.',
   },
   {
-    q: 'What is the placement record?',
-    a: 'Our placement rate is 95%+ with an average package of 4.5 LPA. Top recruiters include Deloitte, KPMG, TCS, Infosys, and 50+ companies across sectors.',
+    q: 'Where is the campus located?',
+    a: 'Two campuses in Hyderabad: Banjara Hills and Raidurg (near Financial District). Both are central and well-connected.',
   },
 ]
 
@@ -29,73 +43,105 @@ export default function CTA() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
-    <section className="py-20 sm:py-28 bg-gray-50">
+    <section className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* CTA Block */}
-        <div className="gradient-brand rounded-2xl p-8 sm:p-12 lg:p-16 mb-20">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-                Don't Wait. Seats Are Filling Fast.
-              </h2>
-              <p className="text-white/70 mb-6 leading-relaxed">
-                The 2026 batch has limited seats across all programs. Secure your spot now
-                and get a free career counselling session with our admissions team.
-              </p>
-              <div className="flex flex-wrap gap-4 text-sm text-white/80">
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-red" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Free counselling call
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-red" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Scholarship eligibility check
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-red" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Zero application fee
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
-              <h3 className="text-lg font-semibold text-navy mb-4">Secure Your Seat</h3>
-              <LeadForm variant="light" />
+        {/* CTA Block with background image */}
+        <div className="relative rounded-3xl overflow-hidden mb-20">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(/images/cta-bg.jpg)' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy/85 to-navy-light/90" />
+          <div className="absolute inset-0 opacity-[0.04]">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+                backgroundSize: '32px 32px',
+              }}
+            />
+          </div>
+          <div className="relative p-8 sm:p-12 lg:p-16">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ type: 'spring', stiffness: 80 }}
+              >
+                <p className="text-sm font-medium text-gold tracking-widest uppercase mb-3">
+                  Start Your Journey
+                </p>
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+                  Admissions Are Open.
+                  <br className="hidden sm:block" />
+                  Apply in 3 Minutes.
+                </h2>
+                <p className="text-white/60 mb-8 leading-relaxed">
+                  Early applicants get priority access to program selection
+                  and counselling sessions.
+                </p>
+                <a
+                  href="https://wa.me/91XXXXXXXXXX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-white hover:bg-[#25D366]/20 transition-colors duration-200 backdrop-blur-sm cursor-pointer"
+                >
+                  <WhatsAppLogo className="h-6 w-6" />
+                  <span className="font-medium text-sm">Talk to Admissions on WhatsApp</span>
+                </a>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ type: 'spring', stiffness: 80, delay: 0.1 }}
+                className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl"
+              >
+                <h3 className="font-serif text-lg font-semibold text-white mb-4">Reserve Your Seat</h3>
+                <LeadForm variant="dark" />
+              </motion.div>
             </div>
           </div>
         </div>
 
         {/* FAQs */}
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-navy text-center mb-12">
-            Frequently Asked Questions
-          </h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
+              Common Questions
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-navy">
+              Frequently Asked Questions
+            </h2>
+          </motion.div>
           <div className="space-y-3">
             {faqs.map((faq, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="bg-white rounded-xl border border-gray-100 overflow-hidden"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="bg-cream rounded-xl border border-gray-100 overflow-hidden hover:border-gold/20 transition-colors duration-200"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-5 text-left"
+                  className="w-full flex items-center justify-between p-5 text-left cursor-pointer group"
                 >
-                  <span className="text-sm font-medium text-navy pr-4">{faq.q}</span>
-                  <svg
-                    className={`w-5 h-5 text-navy/40 flex-shrink-0 transition-transform ${
+                  <span className="text-sm font-medium text-navy pr-4 group-hover:text-red transition-colors duration-200">
+                    {faq.q}
+                  </span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-muted flex-shrink-0 transition-transform duration-200 ${
                       openFaq === i ? 'rotate-180' : ''
                     }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  />
                 </button>
                 <AnimatePresence>
                   {openFaq === i && (
@@ -103,7 +149,7 @@ export default function CTA() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
+                      transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
                       <div className="px-5 pb-5 text-sm text-body leading-relaxed">
@@ -112,7 +158,7 @@ export default function CTA() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

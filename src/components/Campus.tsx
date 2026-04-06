@@ -1,75 +1,129 @@
 import { motion } from 'framer-motion'
+import { MapPin, Lightbulb, Network, Presentation } from 'lucide-react'
 
-const stats = [
-  { value: '15+', label: 'Acres Campus' },
-  { value: '50+', label: 'Industry Partners' },
-  { value: '95%', label: 'Placement Rate' },
-  { value: '20+', label: 'Student Clubs' },
+const campuses = [
+  {
+    name: 'Banjara Hills Campus',
+    description: "Located in one of Hyderabad's most well-connected and established districts.",
+    image: '/images/banjara-campus.jpeg',
+  },
+  {
+    name: 'Raidurg Campus',
+    description: "Situated in the heart of Hyderabad's tech and business corridor, near Financial District.",
+    image: '/images/raidurg-campus.jpeg',
+  },
 ]
 
-const facilities = [
-  'State-of-the-art Computer Labs',
-  'Bloomberg Finance Terminal',
-  'Startup Incubation Centre',
-  'Smart Classrooms with AV',
-  'Library with 50,000+ Volumes',
-  'Sports Complex & Gym',
-  'Hostel with Wi-Fi Campus',
-  'Cafeteria & Recreation Zone',
+const elabzFeatures = [
+  { icon: Lightbulb, text: 'IIIT Hyderabad mentorship' },
+  { icon: Network, text: 'TiE entrepreneur network' },
+  { icon: Presentation, text: 'Incubation support' },
+  { icon: MapPin, text: 'Pitch event access' },
 ]
 
 export default function Campus() {
   return (
-    <section id="campus" className="py-20 sm:py-28 bg-navy text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-              A Campus Built for <span className="text-red">Tomorrow's Leaders</span>
-            </h2>
-            <p className="text-white/70 mb-8 leading-relaxed">
-              From Bloomberg terminals to startup incubation labs, every facility
-              is designed to give you hands-on experience that mirrors the professional world.
-            </p>
+    <section id="campus" className="py-20 sm:py-28 bg-cream overflow-hidden relative">
+      {/* Texture */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundSize: '32px 32px',
+          }}
+        />
+      </div>
 
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="bg-white/5 rounded-xl p-4 border border-white/10">
-                  <div className="text-2xl font-semibold text-red">{stat.value}</div>
-                  <div className="text-sm text-white/60">{stat.label}</div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
+            Our Campuses
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4">
+            Built in Hyderabad.{' '}
+            <span className="text-red">Built for Business.</span>
+          </h2>
+          <p className="text-body max-w-2xl mx-auto text-lg">
+            Two campuses. One city that runs on ambition. Hyderabad is home to a thriving
+            tech and startup ecosystem, and your classrooms sit inside it.
+          </p>
+        </motion.div>
+
+        {/* Campus cards */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {campuses.map((campus, i) => (
+            <motion.div
+              key={campus.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, type: 'spring', stiffness: 80 }}
+              className="group rounded-2xl overflow-hidden border border-gray-200 hover:border-red/20 shadow-sm hover:shadow-xl transition-all duration-300"
+            >
+              <div className="relative h-56 sm:h-72 overflow-hidden">
+                <img
+                  src={campus.image}
+                  alt={campus.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <MapPin className="w-4 h-4 text-gold" />
+                    <h3 className="font-serif text-xl font-semibold text-white">{campus.name}</h3>
+                  </div>
+                  <p className="text-sm text-white/70">{campus.description}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* E-Labz section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: 'spring', stiffness: 80 }}
+          className="grid lg:grid-cols-2 gap-8 items-center"
+        >
+          <div className="rounded-2xl overflow-hidden">
+            <img
+              src="/images/building-entrepreneurs.jpg"
+              alt="E-Labz Incubation Center"
+              className="w-full h-64 lg:h-80 object-cover rounded-2xl"
+            />
+          </div>
+          <div className="bg-navy rounded-2xl p-6 sm:p-8 text-white">
+            <p className="text-sm font-medium text-red-light tracking-widest uppercase mb-3">
+              Incubation
+            </p>
+            <h3 className="font-serif text-2xl font-semibold mb-4">
+              E-Labz Incubation Center
+            </h3>
+            <p className="text-sm text-white/70 leading-relaxed mb-6">
+              Built with IIIT Hyderabad and TiE. Students don't just study startups.
+              They develop ideas, get mentorship, and access entrepreneur networks
+              while still in college.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {elabzFeatures.map((f) => (
+                <div key={f.text} className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-red/20 flex items-center justify-center flex-shrink-0">
+                    <f.icon className="w-4 h-4 text-red-light" />
+                  </div>
+                  <span className="text-sm text-white/80">{f.text}</span>
                 </div>
               ))}
             </div>
-          </motion.div>
-
-          {/* Right: Facilities */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="bg-white/5 rounded-2xl p-6 sm:p-8 border border-white/10">
-              <h3 className="text-lg font-semibold mb-6">Campus Facilities</h3>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {facilities.map((f) => (
-                  <div key={f} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm text-white/80">{f}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

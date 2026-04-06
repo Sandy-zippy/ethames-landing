@@ -3,62 +3,84 @@ import LeadForm from './LeadForm'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen gradient-brand pt-20 overflow-hidden">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px',
-        }} />
+    <section className="relative min-h-screen pt-20 overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: 'url(/images/hero-banner.jpg)' }}
+      />
+      {/* Dark premium overlay — subtle, not colored */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e]/95 via-[#16213e]/85 to-[#0f3460]/70" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,transparent_40%,rgba(15,52,96,0.5)_70%)]" />
+
+      {/* Dot grid animation */}
+      <div className="absolute inset-0 opacity-[0.04]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Copy */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ type: 'spring', stiffness: 60, damping: 20 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-medium mb-6 border border-white/20">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-medium mb-8 border border-white/20 backdrop-blur-sm"
+            >
               <span className="w-2 h-2 rounded-full bg-red animate-pulse" />
               Admissions Open for 2026 Batch
-            </div>
+            </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-6">
-              Your Career Starts with the{' '}
-              <span className="text-red">Right Degree</span>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
+              Built by Industry.{' '}
+              <span className="text-gradient">Not by Academia.</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-xl leading-relaxed">
-              Industry-integrated BBA &amp; BCA programs with 100% placement support,
-              live projects, and a global campus experience at eTHAMES Business School.
+            <p className="text-lg sm:text-xl text-white/75 mb-10 max-w-xl leading-relaxed">
+              KPMG-designed curriculum. Osmania University degree. Harvard case studies.
+              This is Ethames Business School, Hyderabad.
             </p>
 
-            <div className="flex flex-wrap gap-6 text-white/90 text-sm">
-              <div className="flex items-center gap-2">
-                <span className="text-red text-lg font-semibold">7</span> Programs
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-red text-lg font-semibold">330+</span> Seats
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-red text-lg font-semibold">50+</span> Industry Partners
-              </div>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#programs"
+                className="inline-flex items-center px-8 py-3.5 rounded-lg bg-red text-white font-semibold text-sm hover:bg-red/90 transition-colors duration-200 cursor-pointer"
+              >
+                Explore Programs
+              </a>
+              <a
+                href="#apply"
+                className="inline-flex items-center px-8 py-3.5 rounded-lg bg-white/10 text-white font-medium text-sm border border-white/20 hover:bg-white/20 backdrop-blur-sm transition-colors duration-200 cursor-pointer"
+              >
+                Apply Now
+              </a>
             </div>
           </motion.div>
 
-          {/* Right: Form */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ type: 'spring', stiffness: 60, damping: 20, delay: 0.3 }}
             id="apply"
-            className="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl"
+            className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl"
           >
-            <h2 className="text-xl font-semibold text-navy mb-1">Get Free Counselling</h2>
-            <p className="text-sm text-body mb-6">Fill in your details. Our admissions team will reach out within 24 hours.</p>
-            <LeadForm variant="light" />
+            <h2 className="font-serif text-xl font-semibold text-white mb-1">
+              Reserve Your Seat for 2026
+            </h2>
+            <p className="text-sm text-white/60 mb-6">
+              Our admissions team will reach out within 24 hours.
+            </p>
+            <LeadForm variant="dark" />
           </motion.div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import LogoMarquee from './components/LogoMarquee'
+import Stats from './components/Stats'
 import IndustryEdge from './components/IndustryEdge'
 import Programs from './components/Programs'
 import Campus from './components/Campus'
@@ -13,6 +15,8 @@ function Landing() {
     <>
       <Navbar />
       <Hero />
+      <LogoMarquee />
+      <Stats />
       <IndustryEdge />
       <Programs />
       <Campus />

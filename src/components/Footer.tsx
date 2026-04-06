@@ -1,57 +1,130 @@
+import { MapPin, Mail, Phone } from 'lucide-react'
 import logo from '../assets/logo.webp'
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-dark text-white/60 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+    <footer className="bg-[#0a1628] text-white/50 py-16 relative overflow-hidden">
+      {/* Subtle texture */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundSize: '32px 32px',
+          }}
+        />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <img src={logo} alt="eTHAMES Business School" className="h-10 w-auto mb-4 brightness-0 invert" />
-            <p className="text-sm leading-relaxed">
+            <img
+              src={logo}
+              alt="Ethames Business School"
+              className="h-10 w-auto mb-4 brightness-0 invert"
+            />
+            <p className="text-sm leading-relaxed mb-6">
               Industry-integrated BBA &amp; BCA programs preparing students for
               the careers of tomorrow.
             </p>
+            <div className="flex items-center gap-2 text-xs text-white/30">
+              <MapPin className="w-3.5 h-3.5" />
+              <span>Hyderabad, India</span>
+            </div>
           </div>
 
           {/* Programs */}
           <div>
-            <h4 className="text-white font-medium text-sm mb-4">Programs</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#programs" className="hover:text-white transition-colors">BBA in Marketing</a></li>
-              <li><a href="#programs" className="hover:text-white transition-colors">BBA in Finance</a></li>
-              <li><a href="#programs" className="hover:text-white transition-colors">BBA in HR Management</a></li>
-              <li><a href="#programs" className="hover:text-white transition-colors">BCA in Computer Science</a></li>
-              <li><a href="#programs" className="hover:text-white transition-colors">BCA in Data Science & AI</a></li>
+            <h4 className="font-serif text-white font-semibold text-sm mb-5 tracking-wide">
+              Programs
+            </h4>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  BBA in Entrepreneurship
+                </a>
+              </li>
+              <li>
+                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  BCA in AI
+                </a>
+              </li>
+              <li>
+                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  BCA in Cybersecurity
+                </a>
+              </li>
+              <li>
+                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  BBA in Investment Banking
+                </a>
+              </li>
+              <li>
+                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  B.Com in Global Finance
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-medium text-sm mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#campus" className="hover:text-white transition-colors">Campus Life</a></li>
-              <li><a href="#recognition" className="hover:text-white transition-colors">Accreditations</a></li>
-              <li><a href="#apply" className="hover:text-white transition-colors">Apply Now</a></li>
+            <h4 className="font-serif text-white font-semibold text-sm mb-5 tracking-wide">
+              Quick Links
+            </h4>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <a href="#campus" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  Campus Life
+                </a>
+              </li>
+              <li>
+                <a href="#recognition" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  Accreditations
+                </a>
+              </li>
+              <li>
+                <a href="#apply" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  Apply Now
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-medium text-sm mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm">
-              <li>admissions@ethames.ac.in</li>
-              <li>+91 XXXXX XXXXX</li>
-              <li>eTHAMES Business School Campus</li>
+            <h4 className="font-serif text-white font-semibold text-sm mb-5 tracking-wide">
+              Contact
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-gold/60" />
+                <span>admissions@ethames.ac.in</span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-gold/60" />
+                <span>+91 XXXXX XXXXX</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-gold/60 flex-shrink-0 mt-0.5" />
+                <span>Banjara Hills &amp; Raidurg, Hyderabad</span>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs">&copy; {new Date().getFullYear()} eTHAMES Business School. All rights reserved.</p>
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/30">
+            &copy; {new Date().getFullYear()} Ethames Business School. All rights reserved.
+          </p>
           <div className="flex gap-6 text-xs">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors duration-200 cursor-pointer">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-white transition-colors duration-200 cursor-pointer">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

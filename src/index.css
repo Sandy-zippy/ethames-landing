@@ -3,12 +3,19 @@
 @theme {
   --color-navy: #061E43;
   --color-navy-dark: #121C27;
+  --color-navy-light: #0A2A5C;
   --color-red: #ED1C24;
+  --color-red-dark: #C41920;
+  --color-red-light: #F8D7D9;
+  --color-red-soft: #FFF5F5;
+  --color-gold: #C9A96E;
   --color-body: #4B535D;
+  --color-muted: #6B7280;
   --color-white: #FFFFFF;
+  --color-cream: #FFFAF9;
 
-  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
-  --font-slab: "Roboto Slab", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
 }
 
 html {
@@ -23,6 +30,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Dark premium overlay for hero/CTA */
 .gradient-brand {
-  background: linear-gradient(135deg, #061E43 40%, #ED1C24 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+}
+
+.gradient-navy {
+  background: linear-gradient(180deg, #061E43 0%, #0A2A5C 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ED1C24 0%, #C9A96E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
