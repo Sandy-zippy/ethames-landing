@@ -39,8 +39,8 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
         page_url: window.location.href,
       }
 
-      // POST to form handler (GHL + Sheets)
-      fetch('FORM_HANDLER_URL', {
+      // POST to n8n webhook (creates GHL contact + logs to Sheets)
+      fetch('https://sandyautomations.app.n8n.cloud/webhook/ethames-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
