@@ -1,3 +1,4 @@
+import { img } from '../lib/assets'
 import { motion } from 'framer-motion'
 import { MapPin, Lightbulb, Network, Presentation } from 'lucide-react'
 
@@ -68,7 +69,7 @@ export default function Campus() {
             >
               <div className="relative h-56 sm:h-72 overflow-hidden">
                 <img
-                  src={campus.image}
+                  src={img(campus.image)}
                   alt={campus.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -95,7 +96,7 @@ export default function Campus() {
         >
           <div className="rounded-2xl overflow-hidden">
             <img
-              src="/images/building-entrepreneurs.jpg"
+              src={img("/images/building-entrepreneurs.jpg")}
               alt="E-Labz Incubation Center"
               className="w-full h-64 lg:h-80 object-cover rounded-2xl"
             />

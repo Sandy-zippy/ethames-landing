@@ -1,3 +1,4 @@
+import { img } from '../../lib/assets'
 // Partner logos — real images where available, SVG for Coursera/WhatsApp
 
 export function CourseraLogo({ className = 'h-6' }: { className?: string }) {
@@ -18,15 +19,15 @@ export function WhatsAppLogo({ className = 'h-6 w-6' }: { className?: string }) 
 
 // Real image logos
 export function KPMGLogo({ className = 'h-8' }: { className?: string }) {
-  return <img src="/images/kpmg-logo.png" alt="KPMG" className={`${className} object-contain`} />
+  return <img src={img("/images/kpmg-logo.png")} alt="KPMG" className={`${className} object-contain`} />
 }
 
 export function HarvardLogo({ className = 'h-6' }: { className?: string }) {
-  return <img src="/images/hbp-logo.png" alt="Harvard Business Publishing" className={`${className} object-contain`} />
+  return <img src={img("/images/hbp-logo.png")} alt="Harvard Business Publishing" className={`${className} object-contain`} />
 }
 
 export function OsmaniaLogo({ className = 'h-8' }: { className?: string }) {
-  return <img src="/images/osmania-logo.png" alt="Osmania University" className={`${className} object-contain`} />
+  return <img src={img("/images/osmania-logo.png")} alt="Osmania University" className={`${className} object-contain`} />
 }
 
 export function IIITLogo({ className = 'h-6' }: { className?: string }) {
@@ -38,5 +39,5 @@ export function IIITLogo({ className = 'h-6' }: { className?: string }) {
 }
 
 export function TiELogo({ className = 'h-8' }: { className?: string }) {
-  return <img src="/images/tie-logo.png" alt="TiE" className={`${className} object-contain`} />
+  return <img src={img("/images/tie-logo.png")} alt="TiE" className={`${className} object-contain`} />
 }

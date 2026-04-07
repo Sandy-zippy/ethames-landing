@@ -1,3 +1,4 @@
+import { img } from '../lib/assets'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
@@ -49,7 +50,7 @@ export default function CTA() {
         <div className="relative rounded-3xl overflow-hidden mb-20">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/images/cta-bg.jpg)' }}
+            style={{ backgroundImage: 'url(' + img('/images/cta-bg.jpg') + ')' }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy/85 to-navy-light/90" />
           <div className="absolute inset-0 opacity-[0.04]">

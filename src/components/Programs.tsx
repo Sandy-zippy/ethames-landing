@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { programs } from '../data/programs'
+import { img } from '../lib/assets'
 
 const container = {
   hidden: {},
@@ -50,7 +51,7 @@ export default function Programs() {
             >
               <div className="relative h-48 sm:h-52 overflow-hidden flex-shrink-0">
                 <img
-                  src={prog.image}
+                  src={img(prog.image)}
                   alt={prog.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -106,7 +107,7 @@ export default function Programs() {
             >
               <div className="relative h-36 overflow-hidden">
                 <img
-                  src={prog.image}
+                  src={img(prog.image)}
                   alt={prog.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
