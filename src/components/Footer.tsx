@@ -16,7 +16,7 @@ export default function Footer() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <img
@@ -100,15 +100,15 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-gold/60" />
-                <span>admissions@ethames.ac.in</span>
+                <span>info@ethames.ac.in</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-gold/60" />
-                <span>+91 XXXXX XXXXX</span>
+                <span>040-44432222</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-gold/60 flex-shrink-0 mt-0.5" />
-                <span>Banjara Hills &amp; Raidurg, Hyderabad</span>
+                <span>Raidurg, near Financial District, Hyderabad</span>
               </li>
             </ul>
           </div>

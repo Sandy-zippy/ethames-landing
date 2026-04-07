@@ -52,7 +52,7 @@ export default function IndustryEdge() {
   const others = partners.filter((p) => !p.featured)
 
   return (
-    <section className="relative py-20 sm:py-28 bg-cream overflow-hidden">
+    <section className="relative py-14 sm:py-28 bg-cream overflow-hidden">
       {/* Subtle dot pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
@@ -69,7 +69,7 @@ export default function IndustryEdge() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
             Industry Partnerships
@@ -91,7 +91,7 @@ export default function IndustryEdge() {
           transition={{ type: 'spring', stiffness: 80 }}
           className="mb-8"
         >
-          <div className="relative group rounded-2xl p-8 sm:p-10 bg-red-soft border-2 border-red/20 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-red/10">
+          <div className="relative group rounded-2xl p-5 sm:p-10 bg-red-soft border-2 border-red/20 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-red/10">
             <div className="relative grid md:grid-cols-[auto_1fr] gap-6 items-center">
               <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-white p-3">
                 {featured.Logo && <featured.Logo className="h-12 w-auto" />}
@@ -116,7 +116,7 @@ export default function IndustryEdge() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid sm:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
         >
           {others.map((partner) => {
             return (

@@ -4,7 +4,7 @@ import LeadForm from './LeadForm'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen pt-20 overflow-x-hidden">
+    <section className="relative min-h-screen pt-20 overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -25,7 +25,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -36,13 +36,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-medium mb-8 border border-white/20 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-medium mb-5 sm:mb-8 border border-white/20 backdrop-blur-sm"
             >
               <span className="w-2 h-2 rounded-full bg-red animate-pulse" />
               Admissions Open for 2026 Batch
             </motion.div>
 
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
+            <h1 className="font-serif text-[1.65rem] sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
               Built by Industry.{' '}
               <span className="text-gradient">Not by Academia.</span>
             </h1>
@@ -51,20 +51,20 @@ export default function Hero() {
               Osmania University degree. Harvard Manage Mentor. Industry-designed curriculum.
               This is Ethames Business School, Hyderabad.
             </p>
-            <p className="text-sm text-white/50 mb-10 max-w-xl">
+            <p className="text-sm text-white/50 mb-6 sm:mb-10 max-w-xl">
               An initiative of IYRA Higher School of Business
             </p>
 
             <div className="flex flex-wrap gap-4">
               <a
                 href="#programs"
-                className="inline-flex items-center px-8 py-3.5 rounded-lg bg-red text-white font-semibold text-sm hover:bg-red/90 transition-colors duration-200 cursor-pointer"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-red text-white font-semibold text-sm hover:bg-red/90 transition-colors duration-200 cursor-pointer"
               >
                 Explore Programs
               </a>
               <a
                 href="#apply"
-                className="inline-flex items-center px-8 py-3.5 rounded-lg bg-white/10 text-white font-medium text-sm border border-white/20 hover:bg-white/20 backdrop-blur-sm transition-colors duration-200 cursor-pointer"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-white/10 text-white font-medium text-sm border border-white/20 hover:bg-white/20 backdrop-blur-sm transition-colors duration-200 cursor-pointer"
               >
                 Apply Now
               </a>
@@ -76,7 +76,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: 'spring', stiffness: 60, damping: 20, delay: 0.3 }}
             id="apply"
-            className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl"
+            className="bg-white/10 backdrop-blur-xl rounded-2xl p-5 sm:p-8 border border-white/20 shadow-2xl"
           >
             <h2 className="font-serif text-xl font-semibold text-white mb-1">
               Reserve Your Seat for 2026

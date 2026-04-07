@@ -51,13 +51,13 @@ const item = {
 
 export default function Recognition() {
   return (
-    <section id="recognition" className="py-20 sm:py-28 bg-cream">
+    <section id="recognition" className="py-14 sm:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
             Credentials
@@ -76,7 +76,7 @@ export default function Recognition() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 mb-6"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6"
         >
           {recognitions.slice(0, 3).map((rec) => (
             <motion.div
@@ -103,7 +103,7 @@ export default function Recognition() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
         >
           {recognitions.slice(3).map((rec) => (
             <motion.div

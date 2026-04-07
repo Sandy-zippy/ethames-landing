@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: 'Where is the campus located?',
-    a: 'Two campuses in Hyderabad: Banjara Hills and Raidurg (near Financial District). Both are central and well-connected.',
+    a: 'Our campus is located in Raidurg, near Financial District, Hyderabad. Well-connected and in the heart of the tech corridor.',
   },
 ]
 
@@ -44,10 +44,10 @@ export default function CTA() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
-    <section className="py-20 sm:py-28 bg-white">
+    <section className="py-14 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CTA Block with background image */}
-        <div className="relative rounded-3xl overflow-hidden mb-20">
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden mb-12 sm:mb-20">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: 'url(' + img('/images/cta-bg.jpg') + ')' }}
@@ -62,7 +62,7 @@ export default function CTA() {
               }}
             />
           </div>
-          <div className="relative p-8 sm:p-12 lg:p-16">
+          <div className="relative p-5 sm:p-12 lg:p-16">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -86,7 +86,7 @@ export default function CTA() {
                   href="https://wa.me/91XXXXXXXXXX"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-white hover:bg-[#25D366]/20 transition-colors duration-200 backdrop-blur-sm cursor-pointer"
+                  className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-white hover:bg-[#25D366]/20 transition-colors duration-200 backdrop-blur-sm cursor-pointer"
                 >
                   <WhatsAppLogo className="h-6 w-6" />
                   <span className="font-medium text-sm">Talk to Admissions on WhatsApp</span>
@@ -97,7 +97,7 @@ export default function CTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ type: 'spring', stiffness: 80, delay: 0.1 }}
-                className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl"
+                className="bg-white/10 backdrop-blur-xl rounded-2xl p-5 sm:p-8 border border-white/20 shadow-2xl"
               >
                 <h3 className="font-serif text-lg font-semibold text-white mb-4">Reserve Your Seat</h3>
                 <LeadForm variant="dark" />

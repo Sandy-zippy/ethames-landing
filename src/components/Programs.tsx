@@ -18,13 +18,13 @@ export default function Programs() {
   const others = programs.filter((p) => !p.featured)
 
   return (
-    <section id="programs" className="py-20 sm:py-28 bg-white">
+    <section id="programs" className="py-14 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
             Academic Programs
@@ -39,7 +39,7 @@ export default function Programs() {
         </motion.div>
 
         {/* Featured Programs -- 3 large cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {featured.map((prog, i) => (
             <motion.div
               key={prog.name}
@@ -97,7 +97,7 @@ export default function Programs() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {others.map((prog) => (
             <motion.div

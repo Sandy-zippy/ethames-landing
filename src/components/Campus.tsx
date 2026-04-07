@@ -4,11 +4,6 @@ import { MapPin, Lightbulb, Network, Presentation } from 'lucide-react'
 
 const campuses = [
   {
-    name: 'Banjara Hills Campus',
-    description: "Located in one of Hyderabad's most well-connected and established districts.",
-    image: '/images/banjara-campus.jpeg',
-  },
-  {
     name: 'Raidurg Campus',
     description: "Situated in the heart of Hyderabad's tech and business corridor, near Financial District.",
     image: '/images/raidurg-campus.jpeg',
@@ -24,7 +19,7 @@ const elabzFeatures = [
 
 export default function Campus() {
   return (
-    <section id="campus" className="py-20 sm:py-28 bg-cream overflow-hidden relative">
+    <section id="campus" className="py-14 sm:py-28 bg-cream overflow-hidden relative">
       {/* Texture */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
@@ -41,7 +36,7 @@ export default function Campus() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
             Our Campuses
@@ -51,13 +46,13 @@ export default function Campus() {
             <span className="text-red">Built for Business.</span>
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
-            Two campuses. One city that runs on ambition. Hyderabad is home to a thriving
-            tech and startup ecosystem, and your classrooms sit inside it.
+            Hyderabad is home to a thriving tech and startup ecosystem,
+            and your classroom sits right inside it.
           </p>
         </motion.div>
 
         {/* Campus cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 max-w-2xl mx-auto gap-6 sm:gap-8 mb-12 sm:mb-16">
           {campuses.map((campus, i) => (
             <motion.div
               key={campus.name}
@@ -101,7 +96,7 @@ export default function Campus() {
               className="w-full h-64 lg:h-80 object-cover rounded-2xl"
             />
           </div>
-          <div className="bg-navy rounded-2xl p-6 sm:p-8 text-white">
+          <div className="bg-navy rounded-2xl p-5 sm:p-8 text-white">
             <p className="text-sm font-medium text-red-light tracking-widest uppercase mb-3">
               Incubation
             </p>
