@@ -7,9 +7,9 @@ const recognitions = [
     logo: '/images/osmania-logo.png',
   },
   {
-    title: 'KPMG',
-    description: 'Curriculum designed in partnership with one of the Big Four.',
-    logo: '/images/kpmg-logo.png',
+    title: 'Harvard Manage Mentor',
+    description: 'Globally recognized platform for management and leadership development.',
+    logo: '/images/hbp-logo.png',
   },
   {
     title: 'Coursera',
@@ -17,16 +17,6 @@ const recognitions = [
     logo: null,
     text: 'Coursera',
     textColor: 'text-[#0056D2]',
-  },
-  {
-    title: 'Harvard Business Publishing',
-    description: 'Real case studies from Harvard. Not textbook summaries.',
-    logo: '/images/hbp-logo.png',
-  },
-  {
-    title: 'TiE Network',
-    description: "Connected to the world's largest entrepreneur network.",
-    logo: '/images/tie-logo.png',
   },
   {
     title: 'Times BBA Ranking',
@@ -41,6 +31,11 @@ const recognitions = [
     logo: null,
     text: 'HER',
     textColor: 'text-navy',
+  },
+  {
+    title: 'TiE Network',
+    description: "Connected to the world's largest entrepreneur network.",
+    logo: '/images/tie-logo.png',
   },
 ]
 
@@ -75,15 +70,15 @@ export default function Recognition() {
           </p>
         </motion.div>
 
-        {/* Top row: 5 partner logos */}
+        {/* Top row: 3 partner credentials */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-6"
+          className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 mb-6"
         >
-          {recognitions.slice(0, 5).map((rec) => (
+          {recognitions.slice(0, 3).map((rec) => (
             <motion.div
               key={rec.title}
               variants={item}
@@ -102,22 +97,26 @@ export default function Recognition() {
           ))}
         </motion.div>
 
-        {/* Bottom row: 2 ranking badges centered */}
+        {/* Bottom row: 3 more credentials */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6"
         >
-          {recognitions.slice(5).map((rec) => (
+          {recognitions.slice(3).map((rec) => (
             <motion.div
               key={rec.title}
               variants={item}
               className="group text-center p-6 rounded-xl bg-white border border-gray-100 hover:border-gold/20 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="h-16 flex items-center justify-center mx-auto mb-4">
-                <span className={`font-black text-3xl ${rec.textColor || 'text-navy'}`}>{rec.text}</span>
+                {rec.logo ? (
+                  <img src={rec.logo} alt={rec.title} className="h-12 object-contain" />
+                ) : (
+                  <span className={`font-bold text-2xl ${rec.textColor || 'text-navy'}`}>{rec.text}</span>
+                )}
               </div>
               <h3 className="font-serif text-sm font-semibold text-navy mb-1">{rec.title}</h3>
               <p className="text-xs text-body leading-relaxed">{rec.description}</p>

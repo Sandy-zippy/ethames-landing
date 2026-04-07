@@ -20,11 +20,11 @@ const faqs = [
   },
   {
     q: 'What programs are available?',
-    a: 'Ethames offers 7 programs across BBA and BCA. The flagship is BBA in Entrepreneurship & Startup Management with 120 seats. BCA programs include AI and Cybersecurity.',
+    a: 'Ethames offers 7 programs including Professional Entrepreneurship (120 seats), AI Professional, Cybersecurity Professional, Investment Banking Professional, Global Finance Professional, Family Business Leadership, and Risk Management Professional.',
   },
   {
     q: 'What makes Ethames different from other colleges?',
-    a: 'The curriculum is built with KPMG, not copied from a university syllabus. Students access Coursera, Harvard Business Publishing case studies, and E-Labz incubation backed by IIIT Hyderabad and TiE.',
+    a: 'The curriculum integrates Harvard Manage Mentor for leadership development, Coursera for technical certifications, and E-Labz for real incubation experience. You graduate with an Osmania University degree plus industry-relevant skills.',
   },
   {
     q: 'What is the fee structure?',

@@ -115,9 +115,14 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/30">
-            &copy; {new Date().getFullYear()} Ethames Business School. All rights reserved.
-          </p>
+          <div>
+            <p className="text-xs text-white/50 mb-1">
+              An initiative of IYRA Higher School of Business
+            </p>
+            <p className="text-xs text-white/30">
+              &copy; {new Date().getFullYear()} Ethames Business School. All rights reserved.
+            </p>
+          </div>
           <div className="flex gap-6 text-xs">
             <a href="#" className="hover:text-white transition-colors duration-200 cursor-pointer">
               Privacy Policy

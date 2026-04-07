@@ -1,47 +1,38 @@
 import { motion } from 'framer-motion'
 // Partner logos only — no icon imports
 import {
-  KPMGLogo,
   CourseraLogo,
   HarvardLogo,
-  IIITLogo,
-  TiELogo,
+  OsmaniaLogo,
 } from './icons/PartnerLogos'
 
 const partners = [
   {
-    name: 'KPMG',
-    Logo: KPMGLogo,
-    description: 'Curriculum designed and validated by KPMG consultants. Not professors guessing what industry needs.',
-    proof: 'Full curriculum partnership across all BBA programs',
+    name: 'Osmania University',
+    Logo: OsmaniaLogo,
+    description: 'UGC-recognized degree from one of India\'s established state universities. Your credential carries the same weight as any top university qualification.',
+    proof: 'Degree-granting university partner',
     featured: true,
+  },
+  {
+    name: 'Harvard Manage Mentor',
+    Logo: HarvardLogo,
+    description: 'Access Harvard Manage Mentor, a globally recognized platform for building management and leadership capabilities through structured, interactive modules.',
+    proof: 'Leadership development platform access',
+    featured: false,
+  },
+  {
+    name: 'E-Labz Incubation',
+    Logo: null,
+    description: 'On-campus incubation program. Develop and test real business ideas with mentorship from leading tech institutions and entrepreneur networks.',
+    proof: 'Active incubation partnership',
+    featured: false,
   },
   {
     name: 'Coursera',
     Logo: CourseraLogo,
     description: 'Unlimited access to 5,000+ courses from Google, IBM, Meta, and top global universities.',
     proof: '5,000+ courses for every enrolled student',
-    featured: false,
-  },
-  {
-    name: 'Harvard Business Publishing',
-    Logo: HarvardLogo,
-    description: 'Learn strategy, finance, and leadership through the same case studies used at Harvard Business School.',
-    proof: 'HBP Education case study access',
-    featured: false,
-  },
-  {
-    name: 'E-Labz (IIIT Hyderabad)',
-    Logo: IIITLogo,
-    description: 'On-campus incubation program. Develop and test real business ideas with mentorship from a top tech institution.',
-    proof: 'Active incubation partnership',
-    featured: false,
-  },
-  {
-    name: 'TiE',
-    Logo: TiELogo,
-    description: "Access TiE's global entrepreneur network for mentorship, pitch events, and investor connections.",
-    proof: 'Integrated into E-Labz incubation',
     featured: false,
   },
 ]
@@ -84,7 +75,7 @@ export default function IndustryEdge() {
             Industry Partnerships
           </p>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
-            Five Partners. Zero Textbook Theory.
+            Four Partners. Zero Textbook Theory.
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
             Every partner shapes what you learn, how you learn it,
@@ -92,7 +83,7 @@ export default function IndustryEdge() {
           </p>
         </motion.div>
 
-        {/* Featured partner -- KPMG */}
+        {/* Featured partner -- Osmania University */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +94,7 @@ export default function IndustryEdge() {
           <div className="relative group rounded-2xl p-8 sm:p-10 bg-red-soft border-2 border-red/20 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-red/10">
             <div className="relative grid md:grid-cols-[auto_1fr] gap-6 items-center">
               <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-white p-3">
-                <featured.Logo className="h-12 w-auto" />
+                {featured.Logo && <featured.Logo className="h-12 w-auto" />}
               </div>
               <div>
                 <div className="flex flex-wrap items-center gap-3 mb-3">
@@ -125,7 +116,7 @@ export default function IndustryEdge() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid sm:grid-cols-3 gap-6"
         >
           {others.map((partner) => {
             return (
@@ -135,7 +126,11 @@ export default function IndustryEdge() {
                 className="group p-6 rounded-xl bg-white border border-gray-100 hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="h-12 flex items-center mb-4">
-                  <partner.Logo className="h-8" />
+                  {partner.Logo ? (
+                    <partner.Logo className="h-8" />
+                  ) : (
+                    <span className="font-bold text-lg text-navy">{partner.name}</span>
+                  )}
                 </div>
                 <p className="text-sm text-body leading-relaxed mb-3">{partner.description}</p>
                 <p className="text-xs text-red font-medium">{partner.proof}</p>

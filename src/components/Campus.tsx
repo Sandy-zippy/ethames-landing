@@ -16,7 +16,7 @@ const campuses = [
 ]
 
 const elabzFeatures = [
-  { icon: Lightbulb, text: 'IIIT Hyderabad mentorship' },
+  { icon: Lightbulb, text: 'Expert mentorship' },
   { icon: Network, text: 'TiE entrepreneur network' },
   { icon: Presentation, text: 'Incubation support' },
   { icon: MapPin, text: 'Pitch event access' },
@@ -109,7 +109,7 @@ export default function Campus() {
               E-Labz Incubation Center
             </h3>
             <p className="text-sm text-white/70 leading-relaxed mb-6">
-              Built with IIIT Hyderabad and TiE. Students don't just study startups.
+              On-campus incubation with mentorship from top tech institutions. Students don't just study startups.
               They develop ideas, get mentorship, and access entrepreneur networks
               while still in college.
             </p>

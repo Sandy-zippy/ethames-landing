@@ -47,9 +47,12 @@ export default function Hero() {
               <span className="text-gradient">Not by Academia.</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-white/75 mb-10 max-w-xl leading-relaxed">
-              KPMG-designed curriculum. Osmania University degree. Harvard case studies.
+            <p className="text-lg sm:text-xl text-white/75 mb-4 max-w-xl leading-relaxed">
+              Osmania University degree. Harvard Manage Mentor. Industry-designed curriculum.
               This is Ethames Business School, Hyderabad.
+            </p>
+            <p className="text-sm text-white/50 mb-10 max-w-xl">
+              An initiative of IYRA Higher School of Business
             </p>
 
             <div className="flex flex-wrap gap-4">

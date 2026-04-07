@@ -33,7 +33,7 @@ export default function Programs() {
             Pick a Career Track. Not Just a Degree.
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
-            Seven programs. Each one built with KPMG, backed by Coursera certifications,
+            Seven programs. Each one backed by Coursera certifications, Harvard Manage Mentor,
             and focused on a specific career outcome.
           </p>
         </motion.div>

@@ -1,19 +1,15 @@
 import { InfiniteSlider } from './InfiniteSlider'
 import {
   CourseraLogo,
-  KPMGLogo,
   HarvardLogo,
   OsmaniaLogo,
-  IIITLogo,
   TiELogo,
 } from './icons/PartnerLogos'
 
 const partners = [
-  { name: 'KPMG', Logo: KPMGLogo },
   { name: 'Coursera', Logo: CourseraLogo },
-  { name: 'Harvard Business Publishing', Logo: HarvardLogo },
+  { name: 'Harvard Manage Mentor', Logo: HarvardLogo },
   { name: 'Osmania University', Logo: OsmaniaLogo },
-  { name: 'IIIT Hyderabad', Logo: IIITLogo },
   { name: 'TiE', Logo: TiELogo },
 ]
 

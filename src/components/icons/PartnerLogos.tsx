@@ -23,7 +23,7 @@ export function KPMGLogo({ className = 'h-8' }: { className?: string }) {
 }
 
 export function HarvardLogo({ className = 'h-6' }: { className?: string }) {
-  return <img src={img("/images/hbp-logo.png")} alt="Harvard Business Publishing" className={`${className} object-contain`} />
+  return <img src={img("/images/hbp-logo.png")} alt="Harvard Manage Mentor" className={`${className} object-contain`} />
 }
 
 export function OsmaniaLogo({ className = 'h-8' }: { className?: string }) {
