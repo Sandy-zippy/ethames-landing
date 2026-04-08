@@ -26,6 +26,8 @@ export function InfiniteSlider({
       >
         {children}
         {children}
+        {children}
+        {children}
       </div>
     </div>
   )

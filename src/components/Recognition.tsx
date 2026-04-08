@@ -8,11 +8,6 @@ const recognitions = [
     logo: '/images/ey-logo.svg',
   },
   {
-    title: 'Osmania University',
-    description: 'UGC-recognized degree. Same credential weight as any top state university.',
-    logo: '/images/osmania-logo.png',
-  },
-  {
     title: 'Harvard Manage Mentor',
     description: 'Globally recognized platform for management and leadership development.',
     logo: '/images/hbp-logo.png',
@@ -37,6 +32,11 @@ const recognitions = [
     logo: null,
     text: 'HER',
     textColor: 'text-navy',
+  },
+  {
+    title: 'Osmania University',
+    description: 'UGC-recognized degree from a top state university.',
+    logo: '/images/osmania-logo.png',
   },
 ]
 
