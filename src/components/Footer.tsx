@@ -108,7 +108,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-gold/60 flex-shrink-0 mt-0.5" />
-                <span>Gachibowli, Raidurg, Hyderabad - 500081</span>
+                <span>Raidurg &amp; Banjara Hills, Hyderabad</span>
               </li>
             </ul>
           </div>

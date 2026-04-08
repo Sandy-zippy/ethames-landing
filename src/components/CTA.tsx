@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: 'Where is the campus located?',
-    a: 'Our campus is located in Gachibowli, Raidurg, Hyderabad - 500081. In the heart of the tech corridor, near Financial District.',
+    a: 'Two campuses in Hyderabad: Raidurg (Gachibowli, near Financial District) and Banjara Hills. Both are central and well-connected.',
   },
 ]
 

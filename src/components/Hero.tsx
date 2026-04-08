@@ -11,8 +11,8 @@ export default function Hero() {
         style={{ backgroundImage: 'url(' + img('/images/hero-banner.jpg') + ')' }}
       />
       {/* Dark premium overlay — subtle, not colored */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e]/95 via-[#16213e]/85 to-[#0f3460]/70" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,transparent_40%,rgba(15,52,96,0.5)_70%)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1e293b]/90 via-[#334155]/80 to-[#475569]/60" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,transparent_40%,rgba(51,65,85,0.4)_70%)]" />
 
       {/* Dot grid animation */}
       <div className="absolute inset-0 opacity-[0.04]">
@@ -35,7 +35,16 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.15 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-xs font-medium border border-white/20 backdrop-blur-sm mb-3"
+            >
+              In Strategic Collaboration with IYRA Higher School of Business
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-medium mb-5 sm:mb-8 border border-white/20 backdrop-blur-sm"
             >
               <span className="w-2 h-2 rounded-full bg-red animate-pulse" />
@@ -51,9 +60,7 @@ export default function Hero() {
               Osmania University degree. Harvard Manage Mentor. Industry-designed curriculum.
               This is Ethames Business School, Hyderabad.
             </p>
-            <p className="text-sm text-white/50 mb-6 sm:mb-10 max-w-xl">
-              An initiative of IYRA Higher School of Business
-            </p>
+            <div className="mb-6 sm:mb-10" />
 
             <div className="flex flex-wrap gap-4">
               <a

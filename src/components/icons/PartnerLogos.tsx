@@ -41,3 +41,7 @@ export function IIITLogo({ className = 'h-6' }: { className?: string }) {
 export function TiELogo({ className = 'h-8' }: { className?: string }) {
   return <img src={img("/images/tie-logo.png")} alt="TiE" className={`${className} object-contain`} />
 }
+
+export function EYLogo({ className = 'h-8' }: { className?: string }) {
+  return <img src={img("/images/ey-logo.svg")} alt="Ernst & Young" className={`${className} object-contain`} />
+}

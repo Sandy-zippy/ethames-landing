@@ -4,6 +4,7 @@ import {
   CourseraLogo,
   HarvardLogo,
   OsmaniaLogo,
+  EYLogo,
 } from './icons/PartnerLogos'
 
 const partners = [
@@ -17,7 +18,7 @@ const partners = [
   {
     name: 'Harvard Manage Mentor',
     Logo: HarvardLogo,
-    description: 'Access Harvard Manage Mentor, a globally recognized platform for building management and leadership capabilities through structured, interactive modules.',
+    description: 'Access Harvard Manage Mentor, a globally recognized platform for building management and leadership capabilities through structured, interactive modules with real-world business insights.',
     proof: 'Leadership development platform access',
     featured: false,
   },
@@ -33,6 +34,13 @@ const partners = [
     Logo: CourseraLogo,
     description: 'Unlimited access to 5,000+ courses from Google, IBM, Meta, and top global universities.',
     proof: '5,000+ courses for every enrolled student',
+    featured: false,
+  },
+  {
+    name: 'Ernst & Young',
+    Logo: EYLogo,
+    description: 'Knowledge partnership with one of the world\'s leading professional services firms for industry-relevant academic programs.',
+    proof: 'Knowledge partner',
     featured: false,
   },
 ]
@@ -75,7 +83,7 @@ export default function IndustryEdge() {
             Industry Partnerships
           </p>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
-            Four Partners. Zero Textbook Theory.
+            Five Partners. Zero Textbook Theory.
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
             Every partner shapes what you learn, how you learn it,
@@ -116,7 +124,7 @@ export default function IndustryEdge() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {others.map((partner) => {
             return (

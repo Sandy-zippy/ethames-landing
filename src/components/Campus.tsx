@@ -5,8 +5,13 @@ import { MapPin, Lightbulb, Network, Presentation } from 'lucide-react'
 const campuses = [
   {
     name: 'Raidurg Campus',
-    description: "Situated in the heart of Hyderabad's tech and business corridor, near Financial District.",
+    description: "Gachibowli, Raidurg, Hyderabad - 500081. In the heart of the tech corridor, near Financial District.",
     image: '/images/raidurg-campus.jpeg',
+  },
+  {
+    name: 'Banjara Hills Campus',
+    description: "Located in one of Hyderabad's most well-connected and established districts.",
+    image: '/images/banjara-campus.jpeg',
   },
 ]
 
@@ -39,20 +44,19 @@ export default function Campus() {
           className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
-            Our Campus
+            Our Campuses
           </p>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
             Built in Hyderabad.{' '}
             <span className="text-red">Built for Business.</span>
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
-            Hyderabad is home to a thriving tech and startup ecosystem,
-            and your classroom sits right inside it.
+            Two campuses in Hyderabad, right inside the city's thriving tech and startup ecosystem.
           </p>
         </motion.div>
 
         {/* Campus cards */}
-        <div className="grid grid-cols-1 max-w-2xl mx-auto gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {campuses.map((campus, i) => (
             <motion.div
               key={campus.name}

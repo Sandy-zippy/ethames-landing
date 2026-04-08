@@ -33,7 +33,7 @@ body {
 
 /* Dark premium overlay for hero/CTA */
 .gradient-brand {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 60%, #475569 100%);
 }
 
 .gradient-navy {

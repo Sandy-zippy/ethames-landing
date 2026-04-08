@@ -3,12 +3,14 @@ import {
   CourseraLogo,
   HarvardLogo,
   OsmaniaLogo,
+  EYLogo,
 } from './icons/PartnerLogos'
 
 const partners = [
   { name: 'Coursera', Logo: CourseraLogo },
   { name: 'Harvard Manage Mentor', Logo: HarvardLogo },
   { name: 'Osmania University', Logo: OsmaniaLogo },
+  { name: 'Ernst & Young', Logo: EYLogo },
 ]
 
 export default function LogoMarquee() {

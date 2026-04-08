@@ -22,7 +22,7 @@ export const programs: Program[] = [
       'Access E-Labz incubation to develop and test business ideas',
       'Industry-designed curriculum: business modeling, fundraising, growth',
       'Stack Coursera certifications from Google, IBM, and Meta',
-      'Harvard Manage Mentor leadership modules',
+      'Harvard Manage Mentor for management and leadership development',
     ],
   },
   {
@@ -37,7 +37,7 @@ export const programs: Program[] = [
       'AI, machine learning, and data science curriculum',
       'In knowledge partnership with The Foundry',
       'Access 5,000+ Coursera courses in Python, TensorFlow, cloud',
-      'Harvard Manage Mentor leadership modules',
+      'Harvard Manage Mentor for management and leadership development',
     ],
   },
   {
@@ -52,13 +52,13 @@ export const programs: Program[] = [
       'Threat analysis, ethical hacking, and security architecture',
       'Industry-current tools and frameworks',
       'Coursera certifications in cybersecurity from Google and IBM',
-      'Harvard Manage Mentor leadership modules',
+      'Harvard Manage Mentor for management and leadership development',
     ],
   },
   {
     name: 'Investment Banking Professional',
     shortName: 'Investment Banking',
-    description: 'Master valuation, M&A, and financial modeling through industry-designed coursework and Harvard Manage Mentor leadership modules.',
+    description: 'Master valuation, M&A, and financial modeling through industry-designed coursework and Harvard Manage Mentor for management and leadership development.',
     seats: 60,
     duration: '3 Years',
     featured: false,

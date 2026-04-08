@@ -19,6 +19,11 @@ const recognitions = [
     textColor: 'text-[#0056D2]',
   },
   {
+    title: 'Ernst & Young',
+    description: 'Knowledge partnership with a Big Four professional services firm.',
+    logo: '/images/ey-logo.svg',
+  },
+  {
     title: 'Times BBA Ranking',
     description: 'Top 10 BBA program in India.',
     logo: null,
@@ -71,9 +76,9 @@ export default function Recognition() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6"
         >
-          {recognitions.slice(0, 3).map((rec) => (
+          {recognitions.slice(0, 4).map((rec) => (
             <motion.div
               key={rec.title}
               variants={item}
@@ -98,9 +103,9 @@ export default function Recognition() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
         >
-          {recognitions.slice(3).map((rec) => (
+          {recognitions.slice(4).map((rec) => (
             <motion.div
               key={rec.title}
               variants={item}
