@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion'
+import { img } from '../lib/assets'
 
 const recognitions = [
+  {
+    title: 'Ernst & Young',
+    description: 'Knowledge partnership with a Big Four professional services firm.',
+    logo: '/images/ey-logo.svg',
+  },
   {
     title: 'Osmania University',
     description: 'UGC-recognized degree. Same credential weight as any top state university.',
@@ -17,11 +23,6 @@ const recognitions = [
     logo: null,
     text: 'Coursera',
     textColor: 'text-[#0056D2]',
-  },
-  {
-    title: 'Ernst & Young',
-    description: 'Knowledge partnership with a Big Four professional services firm.',
-    logo: '/images/ey-logo.svg',
   },
   {
     title: 'Times BBA Ranking',
@@ -86,7 +87,7 @@ export default function Recognition() {
             >
               <div className="h-16 flex items-center justify-center mx-auto mb-4">
                 {rec.logo ? (
-                  <img src={rec.logo} alt={rec.title} className="h-12 object-contain" />
+                  <img src={img(rec.logo)} alt={rec.title} className="h-12 object-contain" />
                 ) : (
                   <span className={`font-bold text-2xl ${rec.textColor || 'text-navy'}`}>{rec.text}</span>
                 )}
@@ -113,7 +114,7 @@ export default function Recognition() {
             >
               <div className="h-16 flex items-center justify-center mx-auto mb-4">
                 {rec.logo ? (
-                  <img src={rec.logo} alt={rec.title} className="h-12 object-contain" />
+                  <img src={img(rec.logo)} alt={rec.title} className="h-12 object-contain" />
                 ) : (
                   <span className={`font-bold text-2xl ${rec.textColor || 'text-navy'}`}>{rec.text}</span>
                 )}

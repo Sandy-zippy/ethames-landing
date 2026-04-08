@@ -16,7 +16,7 @@ export default function Footer() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <img
@@ -68,30 +68,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-serif text-white font-semibold text-sm mb-5 tracking-wide">
-              Quick Links
-            </h4>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <a href="#campus" className="hover:text-white transition-colors duration-200 cursor-pointer">
-                  Campus Life
-                </a>
-              </li>
-              <li>
-                <a href="#recognition" className="hover:text-white transition-colors duration-200 cursor-pointer">
-                  Accreditations
-                </a>
-              </li>
-              <li>
-                <a href="#apply" className="hover:text-white transition-colors duration-200 cursor-pointer">
-                  Apply Now
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h4 className="font-serif text-white font-semibold text-sm mb-5 tracking-wide">
@@ -100,11 +76,11 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-gold/60" />
-                <span>info@ethames.ac.in</span>
+                <span>info@iyrahub.com</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-gold/60" />
-                <span>040-44432222</span>
+                <span>+91 8896066666</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-gold/60 flex-shrink-0 mt-0.5" />

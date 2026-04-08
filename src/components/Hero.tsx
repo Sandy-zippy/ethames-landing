@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: 'url(' + img('/images/hero-banner.jpg') + ')' }}
+        style={{ backgroundImage: 'url(' + img('/images/hero-v2.png') + ')' }}
       />
       {/* Navy overlay — lets campus image show through */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy-light/65" />
@@ -56,8 +56,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg sm:text-xl text-white/75 mb-4 max-w-xl leading-relaxed">
-              Osmania University degree. Harvard Manage Mentor. Industry-designed curriculum.
-              This is Ethames Business School, Hyderabad.
+              Ernst &amp; Young knowledge partner. Harvard Manage Mentor. Osmania University degree.
             </p>
             <div className="mb-6 sm:mb-10" />
 

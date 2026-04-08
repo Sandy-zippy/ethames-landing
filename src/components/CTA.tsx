@@ -74,16 +74,13 @@ export default function CTA() {
                   Start Your Journey
                 </p>
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">
-                  Admissions Are Open.
-                  <br className="hidden sm:block" />
-                  Apply in 3 Minutes.
+                  Limited Seats. Applications Closing Soon.
                 </h2>
                 <p className="text-white/60 mb-8 leading-relaxed">
-                  Early applicants get priority access to program selection
-                  and counselling sessions.
+                  Join the 2026 batch. Early applicants get priority counselling and program selection.
                 </p>
                 <a
-                  href="https://wa.me/91XXXXXXXXXX"
+                  href="https://wa.me/918896066666"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-white hover:bg-[#25D366]/20 transition-colors duration-200 backdrop-blur-sm cursor-pointer"

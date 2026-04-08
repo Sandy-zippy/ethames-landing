@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import logo from '../assets/logo.webp'
+import { img } from '../lib/assets'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -29,17 +30,10 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <a href="#" className="flex-shrink-0 cursor-pointer flex items-center gap-3">
-            <img
-              src={logo}
-              alt="Ethames Business School"
-              className={`h-10 sm:h-12 w-auto transition-all duration-300 ${
-                !scrolled ? 'brightness-0 invert' : ''
-              }`}
-            />
-            <span className={`text-[10px] leading-tight font-medium transition-colors duration-300 ${scrolled ? 'text-navy/60' : 'text-white/60'}`}>
-              ×<br />IYRA
-            </span>
+          <a href="#" className="flex-shrink-0 cursor-pointer flex items-center gap-2">
+            <img src={logo} alt="Ethames Business School" className={`h-8 sm:h-10 w-auto transition-all duration-300 ${!scrolled ? 'brightness-0 invert' : ''}`} />
+            <span className={`text-xs font-bold ${scrolled ? 'text-navy/30' : 'text-white/30'}`}>&times;</span>
+            <img src={img('/images/iyra-logo.png')} alt="IYRA" className={`h-8 sm:h-10 w-auto transition-all duration-300 ${!scrolled ? 'brightness-0 invert' : ''}`} />
           </a>
 
           <div className="hidden md:flex items-center gap-8">

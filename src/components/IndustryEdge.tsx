@@ -133,13 +133,10 @@ export default function IndustryEdge() {
                 variants={item}
                 className="group p-6 rounded-xl bg-white border border-gray-100 hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="h-12 flex items-center mb-4">
-                  {partner.Logo ? (
-                    <partner.Logo className="h-8" />
-                  ) : (
-                    <span className="font-bold text-lg text-navy">{partner.name}</span>
-                  )}
+                <div className="h-12 flex items-center mb-3">
+                  {partner.Logo ? <partner.Logo className="h-8" /> : null}
                 </div>
+                <h3 className="font-serif text-lg font-semibold text-navy mb-2">{partner.name}</h3>
                 <p className="text-sm text-body leading-relaxed mb-3">{partner.description}</p>
                 <p className="text-xs text-red font-medium">{partner.proof}</p>
               </motion.div>

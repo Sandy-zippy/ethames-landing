@@ -23,7 +23,7 @@ export default function LogoMarquee() {
           WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
         }}
       >
-        <InfiniteSlider gap={80} speed={20} speedOnHover={10}>
+        <InfiniteSlider gap={80} speed={20}>
           {partners.map((partner) => (
             <div
               key={partner.name}

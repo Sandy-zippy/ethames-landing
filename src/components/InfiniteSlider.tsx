@@ -4,7 +4,6 @@ interface InfiniteSliderProps {
   children: ReactNode
   gap?: number
   speed?: number
-  speedOnHover?: number
   className?: string
 }
 
@@ -19,7 +18,7 @@ export function InfiniteSlider({
   return (
     <div className={`overflow-hidden ${className}`}>
       <div
-        className="flex w-max animate-marquee hover:[animation-play-state:paused]"
+        className="flex w-max animate-marquee"
         style={{
           gap: `${gap}px`,
           animationDuration: duration,
