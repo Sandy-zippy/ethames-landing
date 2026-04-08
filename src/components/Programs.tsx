@@ -86,9 +86,9 @@ export default function Programs() {
             <motion.div
               key={prog.name}
               
-              className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:border-gold/30 hover:shadow-lg transition-all duration-300"
+              className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:border-gold/30 hover:shadow-lg transition-all duration-300 flex flex-col"
             >
-              <div className="relative h-36 overflow-hidden">
+              <div className="relative h-36 overflow-hidden flex-shrink-0">
                 <img
                   src={img(prog.image)}
                   alt={prog.name}
@@ -96,7 +96,7 @@ export default function Programs() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
               </div>
-              <div className="p-5">
+              <div className="p-5 flex flex-col flex-grow">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-medium text-red bg-red/5 px-3 py-1 rounded-full">
                     {prog.duration}
@@ -108,10 +108,10 @@ export default function Programs() {
                 <h3 className="font-serif text-base font-semibold text-navy mb-3 group-hover:text-red transition-colors duration-200">
                   {prog.name}
                 </h3>
-                <p className="text-sm text-body leading-relaxed mb-4">{prog.description}</p>
+                <p className="text-sm text-body leading-relaxed mb-4 flex-grow">{prog.description}</p>
                 <a
                   href="#apply"
-                  className="inline-flex items-center text-sm font-medium text-red hover:text-red/80 transition-colors duration-200 cursor-pointer"
+                  className="inline-flex items-center text-sm font-medium text-red hover:text-red/80 transition-colors duration-200 cursor-pointer mt-auto"
                 >
                   Apply Now
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
