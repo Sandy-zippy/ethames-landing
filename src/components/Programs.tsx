@@ -9,7 +9,7 @@ const container = {
 }
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 1, y: 5 },
   show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 100, damping: 14 } },
 }
 
@@ -21,7 +21,7 @@ export default function Programs() {
     <section id="programs" className="py-14 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-16"
@@ -43,7 +43,7 @@ export default function Programs() {
           {featured.map((prog, i) => (
             <motion.div
               key={prog.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, type: 'spring', stiffness: 80 }}

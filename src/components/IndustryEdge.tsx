@@ -51,7 +51,7 @@ const container = {
 }
 
 const item = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 1, y: 5 },
   show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 100, damping: 12 } },
 }
 
@@ -74,7 +74,7 @@ export default function IndustryEdge() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-16"
@@ -93,7 +93,7 @@ export default function IndustryEdge() {
 
         {/* Featured partner -- Ernst & Young */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ type: 'spring', stiffness: 80 }}
