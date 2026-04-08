@@ -11,8 +11,8 @@ export interface Program {
 
 export const programs: Program[] = [
   {
-    name: 'Professional Entrepreneurship',
-    shortName: 'Entrepreneurship',
+    name: 'BBA in Entrepreneurship & Startup Management',
+    shortName: 'BBA Entrepreneurship',
     description: 'Build and test business ideas through E-Labz incubation with mentorship from leading tech institutions. Industry-designed curriculum covering business modeling, fundraising, operations, and growth.',
     seats: 120,
     duration: '3 Years',
@@ -26,8 +26,8 @@ export const programs: Program[] = [
     ],
   },
   {
-    name: 'AI Professional',
-    shortName: 'AI Professional',
+    name: 'BCA in Artificial Intelligence',
+    shortName: 'BCA AI',
     description: 'Study AI, machine learning, and data science through a curriculum shaped by industry demand. In knowledge partnership with The Foundry.',
     seats: 60,
     duration: '3 Years',
@@ -41,8 +41,8 @@ export const programs: Program[] = [
     ],
   },
   {
-    name: 'Cybersecurity Professional',
-    shortName: 'Cybersecurity',
+    name: 'BCA in Cybersecurity',
+    shortName: 'BCA Cybersecurity',
     description: 'Study threat analysis, ethical hacking, and security architecture with industry-current tools and frameworks.',
     seats: 60,
     duration: '3 Years',
@@ -56,8 +56,8 @@ export const programs: Program[] = [
     ],
   },
   {
-    name: 'Investment Banking Professional',
-    shortName: 'Investment Banking',
+    name: 'BBA in Investment Banking',
+    shortName: 'BBA Investment Banking',
     description: 'Master valuation, M&A, and financial modeling through industry-designed coursework and Harvard Manage Mentor for management and leadership development.',
     seats: 60,
     duration: '3 Years',
@@ -65,8 +65,8 @@ export const programs: Program[] = [
     image: '/images/investment-banking-new.png',
   },
   {
-    name: 'Global Finance Professional',
-    shortName: 'Global Finance',
+    name: 'B.Com in Global Finance',
+    shortName: 'B.Com Global Finance',
     description: 'Accounting and finance with Coursera certifications and exposure to global financial systems.',
     seats: 60,
     duration: '3 Years',
@@ -74,8 +74,8 @@ export const programs: Program[] = [
     image: '/images/global-finance-new.png',
   },
   {
-    name: 'Family Business Leadership',
-    shortName: 'Family Business',
+    name: 'BBA in Family Business Leadership',
+    shortName: 'BBA Family Business',
     description: 'Structured program for next-generation business owners covering succession, governance, and scaling.',
     seats: 60,
     duration: '3 Years',
@@ -83,8 +83,8 @@ export const programs: Program[] = [
     image: '/images/family-business-new.png',
   },
   {
-    name: 'Risk Management Professional',
-    shortName: 'Risk Management',
+    name: 'BBA in Risk Management',
+    shortName: 'BBA Risk Management',
     description: 'Learn enterprise risk, compliance, and audit frameworks built by industry practitioners.',
     seats: 60,
     duration: '3 Years',

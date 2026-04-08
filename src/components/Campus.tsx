@@ -5,12 +5,12 @@ import { MapPin, Lightbulb, Network, Presentation } from 'lucide-react'
 const campuses = [
   {
     name: 'Raidurg Campus',
-    description: "Gachibowli, Raidurg, Hyderabad - 500081. In the heart of the tech corridor, near Financial District.",
+    description: "In the heart of Hyderabad's tech corridor, near Financial District.",
     image: '/images/raidurg-campus.jpeg',
   },
   {
     name: 'Banjara Hills Campus',
-    description: "Located in one of Hyderabad's most well-connected and established districts.",
+    description: "Located in one of Hyderabad's most well-connected districts.",
     image: '/images/banjara-campus.jpeg',
   },
 ]

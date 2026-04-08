@@ -9,11 +9,18 @@ import {
 
 const partners = [
   {
+    name: 'Ernst & Young',
+    Logo: EYLogo,
+    description: 'Knowledge partnership with one of the world\'s leading professional services firms for industry-relevant academic programs.',
+    proof: 'Knowledge partner',
+    featured: true,
+  },
+  {
     name: 'Osmania University',
     Logo: OsmaniaLogo,
     description: 'UGC-recognized degree from one of India\'s established state universities. Your credential carries the same weight as any top university qualification.',
     proof: 'Degree-granting university partner',
-    featured: true,
+    featured: false,
   },
   {
     name: 'Harvard Manage Mentor',
@@ -34,13 +41,6 @@ const partners = [
     Logo: CourseraLogo,
     description: 'Unlimited access to 5,000+ courses from Google, IBM, Meta, and top global universities.',
     proof: '5,000+ courses for every enrolled student',
-    featured: false,
-  },
-  {
-    name: 'Ernst & Young',
-    Logo: EYLogo,
-    description: 'Knowledge partnership with one of the world\'s leading professional services firms for industry-relevant academic programs.',
-    proof: 'Knowledge partner',
     featured: false,
   },
 ]
@@ -83,7 +83,7 @@ export default function IndustryEdge() {
             Industry Partnerships
           </p>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
-            Five Partners. Zero Textbook Theory.
+            Industry Partners. Zero Textbook Theory.
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
             Every partner shapes what you learn, how you learn it,
@@ -91,7 +91,7 @@ export default function IndustryEdge() {
           </p>
         </motion.div>
 
-        {/* Featured partner -- Osmania University */}
+        {/* Featured partner -- Ernst & Young */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ export default function IndustryEdge() {
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <h3 className="font-serif text-2xl font-semibold text-navy">{featured.name}</h3>
                   <span className="px-3 py-1 rounded-full bg-red text-white text-xs font-medium">
-                    Lead Curriculum Partner
+                    Knowledge Partner
                   </span>
                 </div>
                 <p className="text-body text-lg mb-2">{featured.description}</p>

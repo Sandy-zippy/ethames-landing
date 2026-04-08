@@ -108,7 +108,17 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-gold/60 flex-shrink-0 mt-0.5" />
-                <span>Raidurg &amp; Banjara Hills, Hyderabad</span>
+                <div>
+                  <p className="text-white/70 font-medium text-xs mb-1">Raidurg Campus</p>
+                  <p>Gachibowli, Raidurg, Hyderabad - 500081</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-gold/60 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-white/70 font-medium text-xs mb-1">Banjara Hills Campus</p>
+                  <p>Unit 101, 1st Floor, Elite Arcade, Road No. 1, Banjara Hills, Hyderabad - 500034</p>
+                </div>
               </li>
             </ul>
           </div>

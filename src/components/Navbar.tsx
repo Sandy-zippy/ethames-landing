@@ -29,7 +29,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <a href="#" className="flex-shrink-0 cursor-pointer">
+          <a href="#" className="flex-shrink-0 cursor-pointer flex items-center gap-3">
             <img
               src={logo}
               alt="Ethames Business School"
@@ -37,6 +37,9 @@ export default function Navbar() {
                 !scrolled ? 'brightness-0 invert' : ''
               }`}
             />
+            <span className={`text-[10px] leading-tight font-medium transition-colors duration-300 ${scrolled ? 'text-navy/60' : 'text-white/60'}`}>
+              ×<br />IYRA
+            </span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
