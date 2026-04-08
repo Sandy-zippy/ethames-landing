@@ -33,7 +33,7 @@ export default function Stats() {
               transition={{ delay: i * 0.1, type: 'spring', stiffness: 100 }}
               className="text-center"
             >
-              <div className="text-2xl sm:text-5xl font-serif font-bold text-red mb-2">
+              <div className="text-3xl sm:text-5xl font-sans font-bold text-red tabular-nums mb-2">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
               <p className="text-sm text-navy/60 tracking-wide">{stat.label}</p>
