@@ -10,9 +10,8 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url(' + img('/images/hero-banner.jpg') + ')' }}
       />
-      {/* Dark premium overlay — subtle, not colored */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1e293b]/90 via-[#334155]/80 to-[#475569]/60" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,transparent_40%,rgba(51,65,85,0.4)_70%)]" />
+      {/* Navy overlay — lets campus image show through */}
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy-light/65" />
 
       {/* Dot grid animation */}
       <div className="absolute inset-0 opacity-[0.04]">

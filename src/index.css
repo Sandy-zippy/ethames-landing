@@ -31,9 +31,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark premium overlay for hero/CTA */
+/* Premium overlay for hero/CTA — navy base, shows image through */
 .gradient-brand {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 60%, #475569 100%);
+  background: linear-gradient(135deg, #061E43 0%, #0A2A5C 60%, #162B50 100%);
 }
 
 .gradient-navy {
