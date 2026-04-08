@@ -1,3 +1,4 @@
+import { scrollTo } from "../lib/scroll"
 import { MapPin, Mail, Phone } from 'lucide-react'
 import logo from '../assets/logo.webp'
 
@@ -41,27 +42,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   BBA in Entrepreneurship
                 </a>
               </li>
               <li>
-                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   BCA in AI
                 </a>
               </li>
               <li>
-                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   BCA in Cybersecurity
                 </a>
               </li>
               <li>
-                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   BBA in Investment Banking
                 </a>
               </li>
               <li>
-                <a href="#programs" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   B.Com in Global Finance
                 </a>
               </li>
@@ -110,10 +111,10 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-6 text-xs">
-            <a href="#" className="hover:text-white transition-colors duration-200 cursor-pointer">
+            <a onClick={() => scrollTo("apply")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors duration-200 cursor-pointer">
+            <a onClick={() => scrollTo("apply")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
               Terms of Service
             </a>
           </div>

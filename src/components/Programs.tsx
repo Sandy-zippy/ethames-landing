@@ -1,3 +1,4 @@
+import { scrollTo } from "../lib/scroll"
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { programs } from '../data/programs'
@@ -64,7 +65,7 @@ export default function Programs() {
                   </ul>
                 )}
                 <a
-                  href="#apply"
+                  onClick={() => scrollTo("apply")} role="button"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-red text-white font-medium text-sm hover:bg-red/90 transition-colors duration-200 cursor-pointer mt-auto self-start"
                 >
                   Apply for {prog.shortName}
@@ -110,7 +111,7 @@ export default function Programs() {
                 </h3>
                 <p className="text-sm text-body leading-relaxed mb-4 flex-grow">{prog.description}</p>
                 <a
-                  href="#apply"
+                  onClick={() => scrollTo("apply")} role="button"
                   className="inline-flex items-center text-sm font-medium text-red hover:text-red/80 transition-colors duration-200 cursor-pointer mt-auto"
                 >
                   Apply Now

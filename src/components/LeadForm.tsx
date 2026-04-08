@@ -54,6 +54,11 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
       })
 
       setSubmitted(true)
+      // Redirect to thank you page after short delay
+      setTimeout(() => {
+        window.location.hash = '/thank-you'
+        window.scrollTo(0, 0)
+      }, 1500)
     }
   }
 

@@ -1,3 +1,4 @@
+import { scrollTo } from "../lib/scroll"
 import { img } from '../lib/assets'
 import { motion } from 'framer-motion'
 import LeadForm from './LeadForm'
@@ -63,13 +64,13 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="#programs"
+                onClick={() => scrollTo("programs")} role="button"
                 className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-red text-white font-semibold text-sm hover:bg-red/90 transition-colors duration-200 cursor-pointer"
               >
                 Explore Programs
               </a>
               <a
-                href="#apply"
+                onClick={() => scrollTo("apply")} role="button"
                 className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-white/10 text-white font-medium text-sm border border-white/20 hover:bg-white/20 backdrop-blur-sm transition-colors duration-200 cursor-pointer"
               >
                 Apply Now
