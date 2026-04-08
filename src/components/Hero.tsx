@@ -8,14 +8,14 @@ export default function Hero() {
     <section className="relative min-h-screen pt-20 overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center pointer-events-none"
         style={{ backgroundImage: 'url(' + img('/images/hero-v2.png') + ')' }}
       />
       {/* Navy overlay — lets campus image show through */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy-light/65" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy-light/65 pointer-events-none" />
 
       {/* Dot grid animation */}
-      <div className="absolute inset-0 opacity-[0.04]">
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
         <div
           className="absolute inset-0"
           style={{
