@@ -50,7 +50,7 @@ export default function Hero() {
               Admissions Open for 2026 Batch
             </motion.div>
 
-            <h1 className="font-serif text-[1.65rem] sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
+            <h1 className="font-serif text-[1.4rem] sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
               Built by Industry.{' '}
               <span className="text-gradient">Not by Academia.</span>
             </h1>
