@@ -35,9 +35,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-xs font-medium border border-white/20 backdrop-blur-sm mb-3"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-[10px] sm:text-xs font-medium border border-white/20 backdrop-blur-sm mb-3"
             >
-              In Strategic Collaboration with IYRA Higher School of Business
+              <span className="hidden sm:inline">In Strategic Collaboration with IYRA Higher School of Business</span>
+              <span className="sm:hidden">IYRA × Ethames Collaboration</span>
             </motion.div>
 
             <motion.div
