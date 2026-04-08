@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" fill="none">
+  <!-- Triangle A mark -->
+  <path d="M30 5 L45 45 L15 45 Z" fill="#1B3A6B" stroke="none"/>
+  <path d="M30 15 L38 40 L22 40 Z" fill="white" stroke="none"/>
+  <!-- IYRA text -->
+  <text x="10" y="55" font-family="Arial Black, Arial" font-weight="900" font-size="11" fill="#1B3A6B" letter-spacing="3">IYRA</text>
+  <!-- Subtitle -->
+  <text x="2" y="60" font-family="Arial" font-weight="400" font-size="3.5" fill="#1B3A6B" letter-spacing="0.5">SCHOOL OF BUSINESS</text>
+</svg>

@@ -32,8 +32,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a href="#" className="flex-shrink-0 cursor-pointer flex items-center gap-2">
             <img src={logo} alt="Ethames Business School" className={`h-9 sm:h-11 w-auto transition-all duration-300 ${!scrolled ? 'brightness-0 invert' : ''}`} />
-            <span className={`text-xs font-bold ${scrolled ? 'text-navy/30' : 'text-white/30'}`}>&times;</span>
-            <img src={img('/images/iyra-logo.png')} alt="IYRA" className={`h-9 sm:h-11 w-auto transition-all duration-300 ${!scrolled ? 'brightness-0 invert' : ''}`} />
+            <span className={`text-sm font-light ${scrolled ? 'text-navy/30' : 'text-white/40'}`}>×</span>
+            <img src={img('/images/iyra-logo.svg')} alt="IYRA" className={`h-9 sm:h-11 w-auto transition-all duration-300 ${!scrolled ? 'brightness-0 invert' : ''}`} />
           </a>
 
           <div className="hidden md:flex items-center gap-8">
