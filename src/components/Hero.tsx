@@ -37,8 +37,8 @@ export default function Hero() {
               transition={{ delay: 0.15 }}
               className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-[10px] sm:text-xs font-medium border border-white/20 backdrop-blur-sm mb-3"
             >
-              <span className="hidden sm:inline">In Strategic Collaboration with IYRA Higher School of Business</span>
-              <span className="sm:hidden">IYRA × Ethames Collaboration</span>
+              <span className="hidden sm:inline">In Strategic Collaboration with IYRA</span>
+              <span className="sm:hidden">IYRA × Ethames</span>
             </motion.div>
 
             <motion.div

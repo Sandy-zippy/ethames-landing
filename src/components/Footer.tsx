@@ -103,7 +103,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <p className="text-xs text-white/50 mb-1">
-              An initiative of IYRA Higher School of Business
+              An initiative of IYRA
             </p>
             <p className="text-xs text-white/30">
               &copy; {new Date().getFullYear()} Ethames Business School. All rights reserved.
