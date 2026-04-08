@@ -14,7 +14,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const scrollTo = (id: string) => {
+  const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     setMobileOpen(false)
   }
@@ -45,7 +45,7 @@ export default function Navbar() {
             {links.map((l) => (
               <button
                 key={l.id}
-                onClick={() => scrollTo(l.id)}
+                onClick={() => scrollToSection(l.id)}
                 className={`text-sm font-medium transition-colors duration-200 cursor-pointer ${
                   scrolled
                     ? 'text-navy hover:text-red'
@@ -56,7 +56,7 @@ export default function Navbar() {
               </button>
             ))}
             <button
-              onClick={() => scrollTo('apply')}
+              onClick={() => scrollToSection('apply')}
               className="px-6 py-2.5 rounded-lg bg-red text-white text-sm font-semibold hover:bg-red/90 transition-colors duration-200 cursor-pointer"
             >
               Apply Now
@@ -88,14 +88,14 @@ export default function Navbar() {
               {links.map((l) => (
                 <button
                   key={l.id}
-                  onClick={() => scrollTo(l.id)}
+                  onClick={() => scrollToSection(l.id)}
                   className="block text-sm font-medium text-navy hover:text-red transition-colors cursor-pointer w-full text-left"
                 >
                   {l.label}
                 </button>
               ))}
               <button
-                onClick={() => scrollTo('apply')}
+                onClick={() => scrollToSection('apply')}
                 className="block w-full text-center px-6 py-2.5 rounded-lg bg-red text-white text-sm font-semibold cursor-pointer"
               >
                 Apply Now

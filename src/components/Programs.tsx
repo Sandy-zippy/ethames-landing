@@ -1,4 +1,4 @@
-import { scrollTo } from "../lib/scroll"
+import { scrollToSection } from "../lib/scroll"
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { programs } from '../data/programs'
@@ -64,13 +64,13 @@ export default function Programs() {
                     ))}
                   </ul>
                 )}
-                <a
-                  onClick={() => scrollTo("apply")} role="button"
+                <button
+                  onClick={() => scrollToSection("apply")} role="button"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-red text-white font-medium text-sm hover:bg-red/90 transition-colors duration-200 cursor-pointer mt-auto self-start"
                 >
                   Apply for {prog.shortName}
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}
@@ -110,13 +110,13 @@ export default function Programs() {
                   {prog.name}
                 </h3>
                 <p className="text-sm text-body leading-relaxed mb-4 flex-grow">{prog.description}</p>
-                <a
-                  onClick={() => scrollTo("apply")} role="button"
+                <button
+                  onClick={() => scrollToSection("apply")} role="button"
                   className="inline-flex items-center text-sm font-medium text-red hover:text-red/80 transition-colors duration-200 cursor-pointer mt-auto"
                 >
                   Apply Now
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}

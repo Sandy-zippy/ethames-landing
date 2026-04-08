@@ -1,4 +1,4 @@
-import { scrollTo } from "../lib/scroll"
+import { scrollToSection } from "../lib/scroll"
 import { MapPin, Mail, Phone } from 'lucide-react'
 import logo from '../assets/logo.webp'
 
@@ -42,29 +42,29 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <button onClick={() => scrollToSection("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   BBA in Entrepreneurship
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <button onClick={() => scrollToSection("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   BCA in AI
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <button onClick={() => scrollToSection("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   BCA in Cybersecurity
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <button onClick={() => scrollToSection("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   BBA in Investment Banking
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollTo("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                <button onClick={() => scrollToSection("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
                   B.Com in Global Finance
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -111,12 +111,12 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-6 text-xs">
-            <a onClick={() => scrollTo("apply")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+            <button onClick={() => scrollToSection("apply")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
               Privacy Policy
-            </a>
-            <a onClick={() => scrollTo("apply")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+            </button>
+            <button onClick={() => scrollToSection("apply")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
               Terms of Service
-            </a>
+            </button>
           </div>
         </div>
       </div>
