@@ -12,7 +12,7 @@ const campuses = [
 
 const elabzFeatures = [
   { icon: Lightbulb, text: 'Expert mentorship' },
-  { icon: Network, text: 'TiE entrepreneur network' },
+  { icon: Network, text: 'Entrepreneur network access' },
   { icon: Presentation, text: 'Incubation support' },
   { icon: MapPin, text: 'Pitch event access' },
 ]

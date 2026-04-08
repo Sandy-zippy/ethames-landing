@@ -32,11 +32,6 @@ const recognitions = [
     text: 'HER',
     textColor: 'text-navy',
   },
-  {
-    title: 'TiE Network',
-    description: "Connected to the world's largest entrepreneur network.",
-    logo: '/images/tie-logo.png',
-  },
 ]
 
 const container = {

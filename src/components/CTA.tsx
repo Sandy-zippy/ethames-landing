@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: 'Where is the campus located?',
-    a: 'Our campus is located in Raidurg, near Financial District, Hyderabad. Well-connected and in the heart of the tech corridor.',
+    a: 'Our campus is located in Gachibowli, Raidurg, Hyderabad - 500081. In the heart of the tech corridor, near Financial District.',
   },
 ]
 
