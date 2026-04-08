@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sandy-zippy.github.io/ethames-landing/sitemap.xml
