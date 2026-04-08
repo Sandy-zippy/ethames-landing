@@ -38,9 +38,6 @@ export default function Campus() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 1, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
@@ -60,9 +57,6 @@ export default function Campus() {
           {campuses.map((campus, i) => (
             <motion.div
               key={campus.name}
-              initial={{ opacity: 1, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: i * 0.15, type: 'spring', stiffness: 80 }}
               className="group rounded-2xl overflow-hidden border border-gray-200 hover:border-red/20 shadow-sm hover:shadow-xl transition-all duration-300"
             >
@@ -87,9 +81,6 @@ export default function Campus() {
 
         {/* E-Labz section */}
         <motion.div
-          initial={{ opacity: 1, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ type: 'spring', stiffness: 80 }}
           className="grid lg:grid-cols-2 gap-8 items-center"
         >

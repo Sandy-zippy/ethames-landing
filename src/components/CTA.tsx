@@ -65,9 +65,6 @@ export default function CTA() {
           <div className="relative p-5 sm:p-12 lg:p-16">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <motion.div
-                initial={{ opacity: 1, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
                 transition={{ type: 'spring', stiffness: 80 }}
               >
                 <p className="text-sm font-medium text-gold tracking-widest uppercase mb-3">
@@ -90,9 +87,6 @@ export default function CTA() {
                 </a>
               </motion.div>
               <motion.div
-                initial={{ opacity: 1, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ type: 'spring', stiffness: 80, delay: 0.1 }}
                 className="bg-white/10 backdrop-blur-xl rounded-2xl p-5 sm:p-8 border border-white/20 shadow-2xl"
               >
@@ -106,9 +100,6 @@ export default function CTA() {
         {/* FAQs */}
         <div className="max-w-3xl mx-auto">
           <motion.div
-            initial={{ opacity: 1, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="text-center mb-12"
           >
             <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
@@ -122,9 +113,6 @@ export default function CTA() {
             {faqs.map((faq, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 1, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 className="bg-cream rounded-xl border border-gray-100 overflow-hidden hover:border-gold/20 transition-colors duration-200"
               >
@@ -144,7 +132,6 @@ export default function CTA() {
                 <AnimatePresence>
                   {openFaq === i && (
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25 }}

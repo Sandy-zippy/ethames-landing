@@ -3,16 +3,6 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { programs } from '../data/programs'
 import { img } from '../lib/assets'
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-}
-
-const item = {
-  hidden: { opacity: 1, y: 5 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 100, damping: 14 } },
-}
-
 export default function Programs() {
   const featured = programs.filter((p) => p.featured)
   const others = programs.filter((p) => !p.featured)
@@ -21,9 +11,6 @@ export default function Programs() {
     <section id="programs" className="py-14 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 1, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
@@ -43,9 +30,6 @@ export default function Programs() {
           {featured.map((prog, i) => (
             <motion.div
               key={prog.name}
-              initial={{ opacity: 1, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: i * 0.1, type: 'spring', stiffness: 80 }}
               className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-red/20 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
             >
@@ -93,16 +77,15 @@ export default function Programs() {
 
         {/* Other Programs -- smaller cards with image headers */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-50px' }}
+          
+          
+          
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {others.map((prog) => (
             <motion.div
               key={prog.name}
-              variants={item}
+              
               className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:border-gold/30 hover:shadow-lg transition-all duration-300"
             >
               <div className="relative h-36 overflow-hidden">

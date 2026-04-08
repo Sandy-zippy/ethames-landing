@@ -40,24 +40,11 @@ const recognitions = [
   },
 ]
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08 } },
-}
-
-const item = {
-  hidden: { opacity: 1, y: 5 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 100, damping: 14 } },
-}
-
 export default function Recognition() {
   return (
     <section id="recognition" className="py-14 sm:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 1, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
@@ -73,16 +60,15 @@ export default function Recognition() {
 
         {/* Top row: 3 partner credentials */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-50px' }}
+          
+          
+          
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6"
         >
           {recognitions.slice(0, 4).map((rec) => (
             <motion.div
               key={rec.title}
-              variants={item}
+              
               className="group text-center p-6 rounded-xl bg-white border border-gray-100 hover:border-gold/20 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="h-16 flex items-center justify-center mx-auto mb-4">
@@ -100,16 +86,15 @@ export default function Recognition() {
 
         {/* Bottom row: 3 more credentials */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-50px' }}
+          
+          
+          
           className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
         >
           {recognitions.slice(4).map((rec) => (
             <motion.div
               key={rec.title}
-              variants={item}
+              
               className="group text-center p-6 rounded-xl bg-white border border-gray-100 hover:border-gold/20 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="h-16 flex items-center justify-center mx-auto mb-4">

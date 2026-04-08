@@ -45,16 +45,6 @@ const partners = [
   },
 ]
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
-}
-
-const item = {
-  hidden: { opacity: 1, y: 5 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 100, damping: 12 } },
-}
-
 export default function IndustryEdge() {
   const featured = partners.find((p) => p.featured)!
   const others = partners.filter((p) => !p.featured)
@@ -74,9 +64,6 @@ export default function IndustryEdge() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 1, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
@@ -93,9 +80,6 @@ export default function IndustryEdge() {
 
         {/* Featured partner -- Ernst & Young */}
         <motion.div
-          initial={{ opacity: 1, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ type: 'spring', stiffness: 80 }}
           className="mb-8"
         >
@@ -120,17 +104,16 @@ export default function IndustryEdge() {
 
         {/* Other partners */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-50px' }}
+          
+          
+          
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {others.map((partner) => {
             return (
               <motion.div
                 key={partner.name}
-                variants={item}
+                
                 className="group p-6 rounded-xl bg-white border border-gray-100 hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="h-12 flex items-center mb-3">
