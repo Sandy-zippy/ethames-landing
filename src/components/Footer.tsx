@@ -1,6 +1,7 @@
 import { scrollToSection } from "../lib/scroll"
 import { MapPin, Mail, Phone } from 'lucide-react'
 import logo from '../assets/logo.webp'
+import { img } from '../lib/assets'
 
 export default function Footer() {
   return (
@@ -20,11 +21,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <img
-              src={logo}
-              alt="Ethames Business School"
-              className="h-10 w-auto mb-4 brightness-0 invert"
-            />
+            <div className="flex items-center gap-2 mb-4">
+              <img
+                src={logo}
+                alt="Ethames Business School"
+                className="h-8 w-auto brightness-0 invert"
+              />
+              <span className="text-xs text-white/20 font-light">×</span>
+              <img
+                src={img('/images/iyra-logo-transparent.png')}
+                alt="IYRA"
+                className="h-14 w-auto brightness-0 invert"
+              />
+            </div>
             <p className="text-sm leading-relaxed mb-6">
               Industry-integrated BBA &amp; BCA programs preparing students for
               the careers of tomorrow.
@@ -81,20 +90,13 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-gold/60" />
-                <span>+91 8896066666</span>
+                <span>+91-9703003456</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-gold/60 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white/70 font-medium text-xs mb-1">Raidurg Campus</p>
-                  <p>Gachibowli, Raidurg, Hyderabad - 500081</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-gold/60 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-white/70 font-medium text-xs mb-1">Banjara Hills Campus</p>
-                  <p>Unit 101, 1st Floor, Elite Arcade, Road No. 1, Banjara Hills, Hyderabad - 500034</p>
+                  <p className="text-white/70 font-medium text-xs mb-1">Raidurgam Campus</p>
+                  <p>Survey No. 13, Raidurgam, Gachibowli, near Financial District, Hyderabad, Telangana - 500081</p>
                 </div>
               </li>
             </ul>
@@ -111,12 +113,12 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-6 text-xs">
-            <button onClick={() => scrollToSection("apply")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+            <a href="#/privacy-policy" className="hover:text-white transition-colors duration-200 cursor-pointer">
               Privacy Policy
-            </button>
-            <button onClick={() => scrollToSection("apply")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+            </a>
+            <a href="#/terms-of-service" className="hover:text-white transition-colors duration-200 cursor-pointer">
               Terms of Service
-            </button>
+            </a>
           </div>
         </div>
       </div>

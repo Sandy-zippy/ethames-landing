@@ -2,7 +2,6 @@
 # pre-deploy-gate.sh checks dist/ against these
 KPMG
 IIIT Hyderabad
-TiE
 UK-recognized
 Harvard Business Publishing
 Harvard case studies

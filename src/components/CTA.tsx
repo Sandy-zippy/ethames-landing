@@ -8,15 +8,11 @@ import { WhatsAppLogo } from './icons/PartnerLogos'
 const faqs = [
   {
     q: 'What degree will I receive?',
-    a: "You receive a degree from Osmania University, one of India's established state universities. It is fully recognized by UGC. The degree is granted by Osmania University, not by Ethames directly.",
-  },
-  {
-    q: 'Is the degree from Ethames or Osmania University?',
-    a: 'The degree is from Osmania University. Ethames is affiliated with Osmania University, so the degree you earn carries the full recognition and validity of an Osmania University qualification.',
+    a: "You receive a UGC-recognized degree from Osmania University, one of India's established state universities.",
   },
   {
     q: 'Is Ethames recognized by UGC?',
-    a: 'Yes. Ethames is affiliated with Osmania University, which is UGC-recognized. Your degree carries the same validity as any Osmania University qualification.',
+    a: 'Yes. Ethames is affiliated with a UGC-recognized university. Your degree carries full validity and recognition.',
   },
   {
     q: 'What programs are available?',
@@ -24,7 +20,7 @@ const faqs = [
   },
   {
     q: 'What makes Ethames different from other colleges?',
-    a: 'The curriculum integrates Harvard Manage Mentor for leadership development, Coursera for technical certifications, and E-Labz for real incubation experience. You graduate with an Osmania University degree plus industry-relevant skills.',
+    a: 'The curriculum integrates Harvard Manage Mentor for leadership development, Coursera for technical certifications, and E-Labz for real incubation experience. You graduate with a UGC-recognized degree plus industry-relevant skills.',
   },
   {
     q: 'What is the fee structure?',
@@ -36,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Where is the campus located?',
-    a: 'Two campuses in Hyderabad: Raidurg (Gachibowli, near Financial District) and Banjara Hills. Both are central and well-connected.',
+    a: 'Our Raidurgam campus is located in Gachibowli, near the Financial District in Hyderabad.',
   },
 ]
 
@@ -77,7 +73,7 @@ export default function CTA() {
                   Join the 2026 batch. Early applicants get priority counselling and program selection.
                 </p>
                 <a
-                  href="https://wa.me/918896066666"
+                  href="https://wa.me/919703006410?text=Hi%2C%20I%27m%20interested%20in%20learning%20more%20about%20the%20BBA%2FBCA%20programs%20at%20Ethames%20Business%20School.%20Please%20share%20the%20details."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-white hover:bg-[#25D366]/20 transition-colors duration-200 backdrop-blur-sm cursor-pointer"

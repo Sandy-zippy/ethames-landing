@@ -2,15 +2,15 @@ import { InfiniteSlider } from './InfiniteSlider'
 import {
   CourseraLogo,
   HarvardLogo,
-  OsmaniaLogo,
   EYLogo,
+  TiELogo,
 } from './icons/PartnerLogos'
 
 const partners = [
+  { name: 'Ernst & Young', Logo: EYLogo },
   { name: 'Coursera', Logo: CourseraLogo },
   { name: 'Harvard Manage Mentor', Logo: HarvardLogo },
-  { name: 'Osmania University', Logo: OsmaniaLogo },
-  { name: 'Ernst & Young', Logo: EYLogo },
+  { name: 'TiE', Logo: TiELogo },
 ]
 
 export default function LogoMarquee() {

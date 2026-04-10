@@ -10,6 +10,8 @@ import Recognition from './components/Recognition'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import ThankYou from './components/ThankYou'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import TermsOfService from './components/TermsOfService'
 
 function Landing() {
   return (
@@ -34,6 +36,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
     </HashRouter>
   )

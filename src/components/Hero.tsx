@@ -52,13 +52,18 @@ export default function Hero() {
               Admissions Open for 2026 Batch
             </motion.div>
 
-            <h1 className="font-serif text-[1.4rem] sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
+            <h1 className="font-serif text-[1.6rem] sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
               Built by Industry.{' '}
+              <br className="hidden sm:block" />
               <span className="text-gradient">Not by Academia.</span>
             </h1>
 
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-white/10 border border-white/15 backdrop-blur-sm mb-5">
+              <img src={img('/images/ey-logo.svg')} alt="Ernst & Young" className="h-6 sm:h-7 brightness-0 invert opacity-90" />
+              <span className="text-white/80 text-xs sm:text-sm font-medium">Knowledge Partner</span>
+            </div>
             <p className="text-lg sm:text-xl text-white/75 mb-4 max-w-xl leading-relaxed">
-              Ernst &amp; Young knowledge partner. Harvard Manage Mentor. Osmania University degree.
+              Harvard Manage Mentor. Coursera certifications. UGC-recognized degree.
             </p>
             <div className="mb-6 sm:mb-10" />
 

@@ -4,20 +4,15 @@ import { MapPin, Lightbulb, Network, Presentation } from 'lucide-react'
 
 const campuses = [
   {
-    name: 'Raidurg Campus',
+    name: 'Raidurgam Campus',
     description: "In the heart of Hyderabad's tech corridor, near Financial District.",
     image: '/images/raidurg-campus.jpeg',
-  },
-  {
-    name: 'Banjara Hills Campus',
-    description: "Located in one of Hyderabad's most well-connected districts.",
-    image: '/images/banjara-campus.jpeg',
   },
 ]
 
 const elabzFeatures = [
   { icon: Lightbulb, text: 'Expert mentorship' },
-  { icon: Network, text: 'Entrepreneur network access' },
+  { icon: Network, text: 'TiE entrepreneur network' },
   { icon: Presentation, text: 'Incubation support' },
   { icon: MapPin, text: 'Pitch event access' },
 ]
@@ -48,36 +43,32 @@ export default function Campus() {
             <span className="text-red">Built for Business.</span>
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
-            Two campuses in Hyderabad, right inside the city's thriving tech and startup ecosystem.
+            Located in Hyderabad's thriving tech and startup ecosystem.
           </p>
         </motion.div>
 
-        {/* Campus cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
-          {campuses.map((campus, i) => (
-            <motion.div
-              key={campus.name}
-              transition={{ delay: i * 0.15, type: 'spring', stiffness: 80 }}
-              className="group rounded-2xl overflow-hidden border border-gray-200 hover:border-red/20 shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-              <div className="relative h-56 sm:h-72 overflow-hidden">
-                <img
-                  src={img(campus.image)}
-                  alt={campus.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin className="w-4 h-4 text-gold" />
-                    <h3 className="font-serif text-xl font-semibold text-white">{campus.name}</h3>
-                  </div>
-                  <p className="text-sm text-white/70">{campus.description}</p>
-                </div>
+        {/* Campus card — full-width hero style */}
+        <motion.div
+          transition={{ type: 'spring', stiffness: 80 }}
+          className="group rounded-2xl overflow-hidden border border-gray-200 hover:border-red/20 shadow-sm hover:shadow-xl transition-all duration-300 mb-12 sm:mb-16"
+        >
+          <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+            <img
+              src={img(campuses[0].image)}
+              alt={campuses[0].name}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
+            <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10">
+              <div className="flex items-center gap-2 mb-2">
+                <MapPin className="w-5 h-5 text-gold" />
+                <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-white">{campuses[0].name}</h3>
               </div>
-            </motion.div>
-          ))}
-        </div>
+              <p className="text-sm sm:text-base text-white/70 max-w-lg">{campuses[0].description}</p>
+              <p className="text-xs text-white/50 mt-2">Survey No. 13, Raidurgam, Gachibowli, near Financial District, Hyderabad, Telangana - 500081</p>
+            </div>
+          </div>
+        </motion.div>
 
         {/* E-Labz section */}
         <motion.div

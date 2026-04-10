@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
+import { img } from '../lib/assets'
+import logo from '../assets/logo.webp'
 // Partner logos only — no icon imports
 import {
   CourseraLogo,
   HarvardLogo,
-  OsmaniaLogo,
   EYLogo,
+  TiELogo,
 } from './icons/PartnerLogos'
 
 const partners = [
@@ -16,16 +18,16 @@ const partners = [
     featured: true,
   },
   {
-    name: 'Osmania University',
-    Logo: OsmaniaLogo,
-    description: 'UGC-recognized degree from one of India\'s established state universities. Your credential carries the same weight as any top university qualification.',
-    proof: 'Degree-granting university partner',
+    name: 'TiE Network',
+    Logo: TiELogo,
+    description: 'Connected to The Indus Entrepreneurs (TiE), the world\'s largest entrepreneur network fostering entrepreneurship through mentoring and networking.',
+    proof: 'Entrepreneur network partner',
     featured: false,
   },
   {
     name: 'Harvard Manage Mentor',
     Logo: HarvardLogo,
-    description: 'Access Harvard Manage Mentor, a globally recognized platform for building management and leadership capabilities through structured, interactive modules with real-world business insights.',
+    description: 'Access Harvard Manage Mentor, a globally recognized platform for building management and leadership capabilities through structured, interactive modules.',
     proof: 'Leadership development platform access',
     featured: false,
   },
@@ -67,13 +69,18 @@ export default function IndustryEdge() {
           className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
-            Industry Partnerships
+            Strategic Collaboration
           </p>
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
+            <img src={logo} alt="Ethames Business School" className="h-10 sm:h-12 w-auto" />
+            <span className="text-2xl text-navy/30 font-light">×</span>
+            <img src={img('/images/iyra-logo-transparent.png')} alt="IYRA" className="h-10 sm:h-12 w-auto" />
+          </div>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
-            Industry Partners. Zero Textbook Theory.
+            Strategic Collaboration
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
-            Every partner shapes what you learn, how you learn it,
+            Industry partners that shape what you learn, how you learn it,
             and what skills you leave with.
           </p>
         </motion.div>

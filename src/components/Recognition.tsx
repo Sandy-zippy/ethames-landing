@@ -3,40 +3,23 @@ import { img } from '../lib/assets'
 
 const recognitions = [
   {
-    title: 'Ernst & Young',
-    description: 'Knowledge partnership with a Big Four professional services firm.',
-    logo: '/images/ey-logo.svg',
-  },
-  {
-    title: 'Harvard Manage Mentor',
-    description: 'Globally recognized platform for management and leadership development.',
-    logo: '/images/hbp-logo.png',
-  },
-  {
-    title: 'Coursera',
-    description: '5,000+ courses. Same platform used by Fortune 500 teams.',
-    logo: null,
-    text: 'Coursera',
-    textColor: 'text-[#0056D2]',
+    title: 'Osmania University',
+    description: 'UGC-recognized degree from one of India\'s established state universities, founded in 1918. Your degree carries full national and international recognition.',
+    logo: '/images/osmania-logo.png',
   },
   {
     title: 'Times BBA Ranking',
-    description: 'Top 10 BBA program in India.',
+    description: 'Ranked among Top 10 BBA programs in India by Times Education. Evaluated on curriculum quality, faculty, placements, and industry exposure.',
     logo: null,
     text: 'TIMES',
     textColor: 'text-[#E31937]',
   },
   {
     title: 'Higher Education Review',
-    description: 'Top 10 Most Promising BBA Colleges (2022).',
+    description: 'Listed in Top 10 Most Promising BBA Colleges in India (2022). Recognized for innovative pedagogy and industry-integrated learning.',
     logo: null,
     text: 'HER',
     textColor: 'text-navy',
-  },
-  {
-    title: 'Osmania University',
-    description: 'UGC-recognized degree from a top state university.',
-    logo: '/images/osmania-logo.png',
   },
 ]
 
@@ -48,64 +31,33 @@ export default function Recognition() {
           className="text-center mb-10 sm:mb-16"
         >
           <p className="text-sm font-medium text-red tracking-widest uppercase mb-3">
-            Credentials
+            Rankings &amp; Affiliations
           </p>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
-            Ranked. Recognized. Industry-Backed.
+            University Affiliation &amp; Rankings
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
-            Every credential here is third-party verified, not self-proclaimed.
+            Nationally ranked programs backed by a UGC-recognized university degree.
           </p>
         </motion.div>
 
-        {/* Top row: 3 partner credentials */}
         <motion.div
-          
-          
-          
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6"
         >
-          {recognitions.slice(0, 4).map((rec) => (
+          {recognitions.map((rec) => (
             <motion.div
               key={rec.title}
-              
-              className="group text-center p-6 rounded-xl bg-white border border-gray-100 hover:border-gold/20 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300 hover:-translate-y-1"
+              className="group text-center p-8 rounded-xl bg-white border border-gray-100 hover:border-gold/20 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="h-16 flex items-center justify-center mx-auto mb-5">
                 {rec.logo ? (
-                  <img src={img(rec.logo)} alt={rec.title} className="h-12 object-contain" />
+                  <img src={img(rec.logo)} alt={rec.title} className="h-14 object-contain" />
                 ) : (
-                  <span className={`font-bold text-2xl ${rec.textColor || 'text-navy'}`}>{rec.text}</span>
+                  <span className={`font-black text-3xl ${rec.textColor || 'text-navy'}`}>{rec.text}</span>
                 )}
               </div>
-              <h3 className="font-serif text-sm font-semibold text-navy mb-1">{rec.title}</h3>
-              <p className="text-xs text-body leading-relaxed">{rec.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Bottom row: 3 more credentials */}
-        <motion.div
-          
-          
-          
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
-        >
-          {recognitions.slice(4).map((rec) => (
-            <motion.div
-              key={rec.title}
-              
-              className="group text-center p-6 rounded-xl bg-white border border-gray-100 hover:border-gold/20 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="h-16 flex items-center justify-center mx-auto mb-4">
-                {rec.logo ? (
-                  <img src={img(rec.logo)} alt={rec.title} className="h-12 object-contain" />
-                ) : (
-                  <span className={`font-bold text-2xl ${rec.textColor || 'text-navy'}`}>{rec.text}</span>
-                )}
-              </div>
-              <h3 className="font-serif text-sm font-semibold text-navy mb-1">{rec.title}</h3>
-              <p className="text-xs text-body leading-relaxed">{rec.description}</p>
+              <h3 className="font-serif text-base font-semibold text-navy mb-2">{rec.title}</h3>
+              <p className="text-sm text-body leading-relaxed">{rec.description}</p>
             </motion.div>
           ))}
         </motion.div>

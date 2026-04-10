@@ -18,7 +18,7 @@ export default function ThankYou() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://wa.me/918896066666"
+            href="https://wa.me/919703006410?text=Hi%2C%20I%20just%20submitted%20my%20application%20on%20the%20Ethames%20website.%20Looking%20forward%20to%20hearing%20from%20the%20admissions%20team."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#25D366] text-white font-medium text-sm cursor-pointer"

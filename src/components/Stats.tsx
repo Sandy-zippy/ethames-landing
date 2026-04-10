@@ -5,7 +5,7 @@ const stats = [
   { value: 7, suffix: '', label: 'Career-Specific Programs' },
   { value: 480, suffix: '+', label: 'Seats Available' },
   { value: 5000, suffix: '+', label: 'Coursera Courses' },
-  { value: 5, suffix: '', label: 'Industry Partners' },
+  { value: 6, suffix: '', label: 'Industry Partners' },
 ]
 
 export default function Stats() {
