@@ -53,6 +53,15 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
         event_label: form.program,
       })
 
+      // Google Ads conversion tracking
+      if (window.gtag) {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-9133469546/eg_tjb41BA0k6pZQ6-ya4g',
+          value: 1.0,
+          currency: 'INR',
+        })
+      }
+
       setSubmitted(true)
       // Redirect to thank you page after short delay
       setTimeout(() => {

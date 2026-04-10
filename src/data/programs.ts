@@ -28,14 +28,14 @@ export const programs: Program[] = [
   {
     name: 'BCA in Artificial Intelligence',
     shortName: 'BCA AI',
-    description: 'Study AI, machine learning, and data science through a curriculum shaped by industry demand. In knowledge partnership with The Foundry.',
+    description: 'Study AI, machine learning, and data science through a curriculum shaped by industry demand. In knowledge partnership with Ernst & Young.',
     seats: 60,
     duration: '3 Years',
     featured: true,
     image: '/images/ai-new.png',
     bullets: [
       'AI, machine learning, and data science curriculum',
-      'In knowledge partnership with The Foundry',
+      'In knowledge partnership with Ernst & Young',
       'Access 5,000+ Coursera courses in Python, TensorFlow, cloud',
       'Harvard Manage Mentor for management and leadership development',
     ],

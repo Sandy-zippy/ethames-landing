@@ -76,6 +76,7 @@ export default function CTA() {
                   href="https://wa.me/919703006410?text=Hi%2C%20I%27m%20interested%20in%20learning%20more%20about%20the%20BBA%2FBCA%20programs%20at%20Ethames%20Business%20School.%20Please%20share%20the%20details."
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => { if (window.gtag) { window.gtag('event', 'conversion', { send_to: 'AW-9133469546/eg_tjb41BA0k6pZQ6-ya4g' }); } }}
                   className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-white hover:bg-[#25D366]/20 transition-colors duration-200 backdrop-blur-sm cursor-pointer"
                 >
                   <WhatsAppLogo className="h-6 w-6" />
