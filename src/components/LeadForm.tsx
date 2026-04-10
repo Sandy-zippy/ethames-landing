@@ -40,9 +40,11 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
       }
 
       // POST to Apps Script (logs to Sheets + pushes to GHL)
+      const formData = new FormData()
+      formData.append('data', JSON.stringify(payload))
       fetch('https://script.google.com/macros/s/AKfycbxjrNinl4Bq3xxOOShB1-AIA2FMGZb8LGuaKNbMPYwfHbI3gRttj0n8MyxrtuOM03-KPg/exec', {
         method: 'POST',
-        body: JSON.stringify(payload),
+        body: formData,
         mode: 'no-cors',
       }).catch(() => {})
 
