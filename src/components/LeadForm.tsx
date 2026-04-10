@@ -39,11 +39,11 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
         page_url: window.location.href,
       }
 
-      // POST to n8n webhook (creates GHL contact + logs to Sheets backup)
-      fetch('https://sandyautomations.app.n8n.cloud/webhook/ethames-lead', {
+      // POST to Apps Script (logs to Sheets + pushes to GHL)
+      fetch('https://script.google.com/macros/s/AKfycbxjrNinl4Bq3xxOOShB1-AIA2FMGZb8LGuaKNbMPYwfHbI3gRttj0n8MyxrtuOM03-KPg/exec', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
+        mode: 'no-cors',
       }).catch(() => {})
 
       // Track GA4 conversion
