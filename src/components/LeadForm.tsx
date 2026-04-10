@@ -44,7 +44,6 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        mode: 'no-cors',
       }).catch(() => {})
 
       // Track GA4 conversion
