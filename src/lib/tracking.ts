@@ -1,4 +1,4 @@
-// UTM parameter extraction
+// UTM parameter + GCLID extraction
 export function getUTMParams(): Record<string, string> {
   const params = new URLSearchParams(window.location.search)
   return {
@@ -7,6 +7,7 @@ export function getUTMParams(): Record<string, string> {
     utm_campaign: params.get('utm_campaign') || '',
     utm_content: params.get('utm_content') || '',
     utm_term: params.get('utm_term') || '',
+    gclid: params.get('gclid') || '',
   }
 }
 
