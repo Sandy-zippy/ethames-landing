@@ -72,9 +72,9 @@ export default function IndustryEdge() {
             Strategic Collaboration
           </p>
           <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
-            <img src={logo} alt="Ethames Business School" className="h-10 sm:h-12 w-auto" />
+            <img src={logo} alt="Ethames Business School" className="h-9 sm:h-10 w-auto" />
             <span className="text-2xl text-navy/30 font-light">×</span>
-            <img src={img('/images/iyra-logo-transparent.png')} alt="IYRA" className="h-10 sm:h-12 w-auto" />
+            <img src={img('/images/iyra-logo-transparent.png')} alt="IYRA" className="h-14 sm:h-16 w-auto" />
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4">
             Strategic Collaboration

@@ -31,7 +31,7 @@ export default function Footer() {
               <img
                 src={img('/images/iyra-logo-transparent.png')}
                 alt="IYRA"
-                className="h-14 w-auto brightness-0 invert"
+                className="h-16 w-auto brightness-0 invert"
               />
             </div>
             <p className="text-sm leading-relaxed mb-6">
