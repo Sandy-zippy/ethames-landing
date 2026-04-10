@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { AnimatedCounter } from './AnimatedCounter'
 
 const stats = [
-  { value: 7, suffix: '', label: 'Career-Specific Programs' },
+  { value: 6, suffix: '', label: 'Career-Specific Programs' },
   { value: 480, suffix: '+', label: 'Seats Available' },
   { value: 5000, suffix: '+', label: 'Coursera Courses' },
   { value: 6, suffix: '', label: 'Industry Partners' },

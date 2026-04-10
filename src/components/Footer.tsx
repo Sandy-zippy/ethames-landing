@@ -72,7 +72,7 @@ export default function Footer() {
               </li>
               <li>
                 <button onClick={() => scrollToSection("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
-                  B.Com in Global Finance
+                  BBA in Risk Management
                 </button>
               </li>
             </ul>

@@ -6,6 +6,7 @@ export interface Program {
   duration: string
   featured: boolean
   image: string
+  campus: string
   bullets?: string[]
 }
 
@@ -17,6 +18,7 @@ export const programs: Program[] = [
     seats: 120,
     duration: '3 Years',
     featured: true,
+    campus: 'Raidurgam Campus',
     image: '/images/entrepreneurship-new.png',
     bullets: [
       'Access E-Labz incubation to develop and test business ideas',
@@ -32,6 +34,7 @@ export const programs: Program[] = [
     seats: 60,
     duration: '3 Years',
     featured: true,
+    campus: 'Raidurgam Campus',
     image: '/images/ai-new.png',
     bullets: [
       'AI, machine learning, and data science curriculum',
@@ -47,6 +50,7 @@ export const programs: Program[] = [
     seats: 60,
     duration: '3 Years',
     featured: true,
+    campus: 'Raidurgam Campus',
     image: '/images/cybersecurity-new.png',
     bullets: [
       'Threat analysis, ethical hacking, and security architecture',
@@ -62,16 +66,8 @@ export const programs: Program[] = [
     seats: 60,
     duration: '3 Years',
     featured: false,
+    campus: 'Banjara Hills Campus',
     image: '/images/investment-banking-new.png',
-  },
-  {
-    name: 'B.Com in Global Finance',
-    shortName: 'B.Com Global Finance',
-    description: 'Accounting and finance with Coursera certifications and exposure to global financial systems.',
-    seats: 60,
-    duration: '3 Years',
-    featured: false,
-    image: '/images/global-finance-new.png',
   },
   {
     name: 'BBA in Family Business Leadership',
@@ -80,6 +76,7 @@ export const programs: Program[] = [
     seats: 60,
     duration: '3 Years',
     featured: false,
+    campus: 'Banjara Hills Campus',
     image: '/images/family-business-new.png',
   },
   {
@@ -89,6 +86,7 @@ export const programs: Program[] = [
     seats: 60,
     duration: '3 Years',
     featured: false,
+    campus: 'Banjara Hills Campus',
     image: '/images/risk-management-new.png',
   },
 ]

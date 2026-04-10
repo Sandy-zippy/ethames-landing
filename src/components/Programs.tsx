@@ -1,6 +1,6 @@
 import { scrollToSection } from "../lib/scroll"
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2, MapPin } from 'lucide-react'
 import { programs } from '../data/programs'
 import { img } from '../lib/assets'
 
@@ -21,7 +21,7 @@ export default function Programs() {
             Pick a Career Track. Not Just a Degree.
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
-            Seven programs. Each one backed by Coursera certifications, Harvard Manage Mentor,
+            Six programs across two campuses. Each one backed by Coursera certifications, Harvard Manage Mentor,
             and focused on a specific career outcome.
           </p>
         </motion.div>
@@ -51,8 +51,12 @@ export default function Programs() {
                 <h3 className="font-serif text-xl font-semibold text-navy mb-2 group-hover:text-red transition-colors duration-200">
                   {prog.name}
                 </h3>
-                <p className="text-xs text-muted mb-4">
+                <p className="text-xs text-muted mb-2">
                   {prog.seats} seats | {prog.duration}
+                </p>
+                <p className="inline-flex items-center gap-1 text-xs text-navy/60 bg-cream px-2.5 py-1 rounded-full mb-4">
+                  <MapPin className="w-3 h-3" />
+                  {prog.campus}
                 </p>
                 {prog.bullets && (
                   <ul className="space-y-2.5 mb-6 flex-grow">
@@ -106,9 +110,13 @@ export default function Programs() {
                     {prog.seats} seats
                   </span>
                 </div>
-                <h3 className="font-serif text-base font-semibold text-navy mb-3 group-hover:text-red transition-colors duration-200">
+                <h3 className="font-serif text-base font-semibold text-navy mb-2 group-hover:text-red transition-colors duration-200">
                   {prog.name}
                 </h3>
+                <p className="inline-flex items-center gap-1 text-xs text-navy/60 bg-cream px-2 py-0.5 rounded-full mb-3">
+                  <MapPin className="w-3 h-3" />
+                  {prog.campus}
+                </p>
                 <p className="text-sm text-body leading-relaxed mb-4 flex-grow">{prog.description}</p>
                 <button
                   onClick={() => scrollToSection("apply")} role="button"

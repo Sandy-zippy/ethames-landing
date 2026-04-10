@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'What programs are available?',
-    a: 'Ethames offers 7 programs including Professional Entrepreneurship (120 seats), AI Professional, Cybersecurity Professional, Investment Banking Professional, Global Finance Professional, Family Business Leadership, and Risk Management Professional.',
+    a: 'Ethames offers 6 programs across two campuses: Entrepreneurship (120 seats), AI, and Cybersecurity at Raidurgam; Investment Banking, Family Business Leadership, and Risk Management at Banjara Hills.',
   },
   {
     q: 'What makes Ethames different from other colleges?',
