@@ -54,11 +54,18 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
         event_label: form.program,
       })
 
-      // Google Ads conversion tracking
+      // Google Ads conversion tracking (both accounts)
       if (window.gtag) {
+        // Old manager account tag (keep for backwards compat)
         window.gtag('event', 'conversion', {
           send_to: 'AW-9133469546/eg_tjb41BA0k6pZQ6-ya4g',
           value: 1.0,
+          currency: 'INR',
+        })
+        // New INR account — Form Submit (primary)
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-18065137326/Q8wrCPT-g5ocEK69kKZD',
+          value: 100.0,
           currency: 'INR',
         })
       }
