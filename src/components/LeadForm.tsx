@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
 import { programs } from '../data/programs'
-import { getUTMParams, trackEvent } from '../lib/tracking'
+import { getUTMParams, getCookie, trackEvent } from '../lib/tracking'
 
 interface LeadFormProps {
   variant?: 'light' | 'dark'
@@ -29,17 +29,25 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
     setErrors(e)
     if (Object.keys(e).length === 0) {
       const utm = getUTMParams()
+      const fullPhone = `+91${form.phone}`
+
+      // Unique event ID for Meta Pixel + Conversion API dedup
+      const eventId = `lead_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`
 
       const payload = {
         name: form.name,
-        phone: `+91${form.phone}`,
+        phone: fullPhone,
         program: form.program,
         city: form.city,
         ...utm,
         page_url: window.location.href,
+        fb_event_id: eventId,
+        fb_fbp: getCookie('_fbp'),
+        fb_fbc: getCookie('_fbc'),
+        user_agent: navigator.userAgent,
       }
 
-      // POST to Apps Script (logs to Sheets + pushes to GHL)
+      // POST to Apps Script (logs to Sheets + pushes to GHL + forwards to Meta CAPI)
       const formData = new FormData()
       formData.append('data', JSON.stringify(payload))
       fetch('https://script.google.com/macros/s/AKfycbxjrNinl4Bq3xxOOShB1-AIA2FMGZb8LGuaKNbMPYwfHbI3gRttj0n8MyxrtuOM03-KPg/exec', {
@@ -61,6 +69,16 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
           value: 100.0,
           currency: 'INR',
         })
+      }
+
+      // Meta Pixel Lead event (client-side). CAPI server-side fires from Apps Script with same eventId for dedup.
+      if (window.fbq) {
+        window.fbq('track', 'Lead', {
+          content_name: form.program,
+          content_category: 'Admission Inquiry',
+          value: 100.0,
+          currency: 'INR',
+        }, { eventID: eventId })
       }
 
       setSubmitted(true)
