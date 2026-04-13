@@ -13,6 +13,14 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
   const [form, setForm] = useState({ name: '', phone: '', program: '', city: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [submitted, setSubmitted] = useState(false)
+  const [startedFilling, setStartedFilling] = useState(false)
+
+  function trackFormStart() {
+    if (startedFilling) return
+    setStartedFilling(true)
+    if (window.fbq) window.fbq('track', 'InitiateCheckout', { content_name: 'Lead Form Start' })
+    if (window.gtag) window.gtag('event', 'form_start', { event_category: 'form' })
+  }
 
   function validate() {
     const e: Record<string, string> = {}
@@ -47,13 +55,21 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
         user_agent: navigator.userAgent,
       }
 
-      // POST to Apps Script (logs to Sheets + pushes to GHL + forwards to Meta CAPI)
+      // POST to Apps Script (logs to Sheets + pushes to GHL)
       const formData = new FormData()
       formData.append('data', JSON.stringify(payload))
       fetch('https://script.google.com/macros/s/AKfycbxjrNinl4Bq3xxOOShB1-AIA2FMGZb8LGuaKNbMPYwfHbI3gRttj0n8MyxrtuOM03-KPg/exec', {
         method: 'POST',
         body: formData,
         mode: 'no-cors',
+      }).catch(() => {})
+
+      // POST to n8n Meta CAPI webhook (server-side Lead event with same eventId for dedup)
+      fetch('https://sandyautomations.app.n8n.cloud/webhook/iyra-meta-capi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...payload, event_name: 'Lead', value: 100, currency: 'INR' }),
+        keepalive: true,
       }).catch(() => {})
 
       // Track GA4 conversion
@@ -125,6 +141,7 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
           placeholder="Enter your full name"
           className={inputBase}
           value={form.name}
+          onFocus={trackFormStart}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
         />
         {errors.name && <p className="text-red text-xs mt-1">{errors.name}</p>}

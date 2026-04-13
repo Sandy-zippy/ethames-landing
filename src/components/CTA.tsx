@@ -77,8 +77,23 @@ export default function CTA() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
+                    const evtId = `contact_${Date.now()}_${Math.random().toString(36).slice(2,10)}`;
                     if (window.gtag) { window.gtag('event', 'conversion', { send_to: 'AW-18065137326/JT-gCKO875kcEK69kKZD', value: 100.0, currency: 'INR' }); }
-                    if (window.fbq) { window.fbq('track', 'Contact', { content_name: 'WhatsApp Click', value: 100.0, currency: 'INR' }); }
+                    if (window.fbq) { window.fbq('track', 'Contact', { content_name: 'WhatsApp Click', value: 100.0, currency: 'INR' }, { eventID: evtId }); }
+                    fetch('https://sandyautomations.app.n8n.cloud/webhook/iyra-meta-capi', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        event_name: 'Contact',
+                        fb_event_id: evtId,
+                        page_url: window.location.href,
+                        user_agent: navigator.userAgent,
+                        fb_fbp: document.cookie.match(/_fbp=([^;]+)/)?.[1] || '',
+                        fb_fbc: document.cookie.match(/_fbc=([^;]+)/)?.[1] || '',
+                        value: 100, currency: 'INR'
+                      }),
+                      keepalive: true,
+                    }).catch(() => {})
                   }}
                   className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-white hover:bg-[#25D366]/20 transition-colors duration-200 backdrop-blur-sm cursor-pointer"
                 >

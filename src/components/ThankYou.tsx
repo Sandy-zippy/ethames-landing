@@ -1,10 +1,16 @@
 import { CheckCircle2, Phone, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 import logo from '../assets/logo.webp'
 import { img } from '../lib/assets'
 import { WhatsAppLogo } from './icons/PartnerLogos'
 
 export default function ThankYou() {
+  useEffect(() => {
+    if (window.fbq) window.fbq('track', 'CompleteRegistration', { content_name: 'Application Submitted', value: 100, currency: 'INR' })
+    if (window.gtag) window.gtag('event', 'sign_up', { method: 'website_form' })
+  }, [])
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-navy via-navy to-navy-light relative overflow-hidden">
       {/* Dot pattern */}

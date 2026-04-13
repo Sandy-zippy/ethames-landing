@@ -3,13 +3,32 @@ import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2, MapPin } from 'lucide-react'
 import { programs } from '../data/programs'
 import { img } from '../lib/assets'
+import { useEffect, useRef } from 'react'
 
 export default function Programs() {
   const featured = programs.filter((p) => p.featured)
   const others = programs.filter((p) => !p.featured)
+  const sectionRef = useRef<HTMLElement>(null)
+  const firedRef = useRef(false)
+
+  useEffect(() => {
+    if (!sectionRef.current) return
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting && !firedRef.current) {
+          firedRef.current = true
+          if (window.fbq) window.fbq('track', 'ViewContent', { content_name: 'Programs Section', content_category: 'BBA/BCA Programs' })
+          if (window.gtag) window.gtag('event', 'view_item_list', { item_list_name: 'Programs' })
+          obs.disconnect()
+        }
+      })
+    }, { threshold: 0.3 })
+    obs.observe(sectionRef.current)
+    return () => obs.disconnect()
+  }, [])
 
   return (
-    <section id="programs" className="py-14 sm:py-28 bg-white">
+    <section id="programs" ref={sectionRef} className="py-14 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-10 sm:mb-16"
