@@ -70,6 +70,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   a{color:inherit}
   img{max-width:100%;height:auto;display:block}
   .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* ───── URGENCY BAR ───── */
+  .urg{background:linear-gradient(90deg,#ED1C24 0%,#C41920 100%);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+  .urg .pulse{width:7px;height:7px;border-radius:50%;background:#fff;animation:pulse 1.6s infinite}
+  .urg b{font-weight:700}
+  .urg .sep{opacity:.5}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+  @media(max-width:480px){.urg{font-size:12px;padding:8px 12px;gap:6px}.urg .sep,.urg .sub{display:none}}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;transition:transform .15s,background .15s,box-shadow .15s;cursor:pointer;border:none}
   .btn-red{background:var(--red);color:#fff;box-shadow:0 4px 16px rgba(237,28,36,.25)}
   .btn-red:hover{background:var(--red-dark);transform:translateY(-1px)}
@@ -78,6 +86,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18)}
   .btn-ghost:hover{background:rgba(255,255,255,.14)}
   .eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+
+  /* ───── BENEFIT PILLS ───── */
+  .benefits{display:flex;flex-direction:column;gap:10px;margin-bottom:26px;max-width:520px}
+  .benefits .b{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:14px}
+  .benefits .b svg{flex:0 0 18px;color:#4ade80}
+
+  /* ───── TRUST BADGES ───── */
+  .trust-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;padding:10px 12px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:8px;color:rgba(255,255,255,.7);font-size:11.5px}
+  .trust-row svg{color:#4ade80;flex:0 0 14px}
+  .next-steps{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .next-steps .s{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.65);font-size:12.5px}
+  .next-steps .s span{flex:0 0 20px;height:20px;border-radius:50%;background:rgba(74,222,128,.18);color:#4ade80;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;font-family:'Playfair Display',serif}
 
   /* ───── NAV ───── */
   .nav{position:sticky;top:0;z-index:50;background:rgba(6,30,67,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
@@ -129,6 +149,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .thank-block .check{width:54px;height:54px;border-radius:50%;background:rgba(34,197,94,.18);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
   .thank-block h4{color:#fff;font-size:20px;margin-bottom:6px}
   .thank-block p{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:18px}
+
+  /* ───── PARTNER STRIP ───── */
+  .partners{background:#fff;padding:28px 0;border-top:1px solid #F0E8DF}
+  .partners p{text-align:center;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;font-weight:600}
+  .partner-logos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:32px 44px}
+  .partner-logos img{height:30px;width:auto;opacity:.55;filter:grayscale(100%);transition:opacity .2s,filter .2s}
+  .partner-logos img:hover{opacity:1;filter:grayscale(0)}
+  @media(max-width:600px){.partner-logos{gap:22px 28px}.partner-logos img{height:22px}}
+
+  /* ───── MINI FAQ ABOVE FOLD ───── */
+  .mini-faq{background:var(--cream);padding:44px 0}
+  .mini-faq h3{text-align:center;font-size:clamp(22px,2.6vw,28px);margin-bottom:6px}
+  .mini-faq .sub{text-align:center;font-size:14px;color:var(--body);margin-bottom:26px}
+  .mini-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:860px;margin:0 auto}
+  @media(min-width:720px){.mini-grid{grid-template-columns:repeat(3,1fr)}}
+  .mini-card{background:#fff;border:1px solid #EEE4DC;border-radius:12px;padding:20px 20px 18px}
+  .mini-card .q{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px;display:flex;align-items:flex-start;gap:8px}
+  .mini-card .q svg{flex:0 0 16px;color:#22c55e;margin-top:2px}
+  .mini-card .a{font-size:13.5px;color:var(--body);line-height:1.55}
+
+  /* ───── FINAL CTA ───── */
+  .final-cta{background:linear-gradient(135deg,#061E43 0%,#0A2A5C 55%,#162B50 100%);color:#fff;padding:64px 0;text-align:center;position:relative;overflow:hidden}
+  .final-cta::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.06) 1px,transparent 0);background-size:30px 30px;opacity:.5}
+  .final-cta .inner{position:relative;max-width:720px;margin:0 auto;padding:0 20px}
+  .final-cta .date-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(201,169,110,.14);border:1px solid rgba(201,169,110,.3);border-radius:999px;font-size:12px;font-weight:600;color:var(--gold);margin-bottom:18px;letter-spacing:.05em}
+  .final-cta h2{color:#fff;font-size:clamp(26px,3.6vw,40px);margin-bottom:14px;letter-spacing:-.01em}
+  .final-cta p{color:rgba(255,255,255,.65);font-size:15px;margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto}
+  .final-cta .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+  /* ───── STICKY MOBILE CTA ───── */
+  .sticky-cta{display:none}
+  @media(max-width:720px){
+    .sticky-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:58;background:#fff;border-top:1px solid #EEE4DC;padding:10px 72px 10px 14px;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+    .sticky-cta .info{font-size:12px;color:var(--body);line-height:1.25}
+    .sticky-cta .info b{color:var(--red);font-weight:700}
+    .sticky-cta a{background:var(--red);color:#fff;padding:11px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}
+    body{padding-bottom:68px}
+    .wa-float{bottom:78px;right:14px}
+  }
 
   /* ───── VALUE CARDS ───── */
   .value{background:var(--cream);padding:64px 0}
@@ -202,6 +261,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- GTM noscript -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS7LS3TC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+<!-- URGENCY BAR -->
+<div class="urg">
+  <span class="pulse"></span>
+  <span><b id="countdown">Loading…</b></span>
+  <span class="sep">·</span>
+  <span class="sub">Free entry · limited seats</span>
+</div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
@@ -223,7 +290,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <span>Special Event · May 2, 2026 · 11 AM</span>
       </div>
       <h1 class="hero-title">Confused After 12th?<br><span class="accent">Find your path in one Saturday.</span></h1>
-      <p class="hero-sub">Take the free IYRA Career Aptitude Exam at EBS Raidurg Campus. Walk out with a personalised career report and a 1-on-1 counselling session with senior admissions. Open to 11th &amp; 12th graders.</p>
+      <p class="hero-sub">Free aptitude test + 1-on-1 counselling with senior admissions at EBS Raidurg Campus. Walk in confused, walk out with a printed career report. Open to 11th &amp; 12th graders across Hyderabad.</p>
+
+      <div class="benefits">
+        <div class="b"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>45-minute aptitude test</b> · reasoning, verbal, numerical, interest mapping</span></div>
+        <div class="b"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>1-on-1 session</b> with a senior counsellor · parents welcome</span></div>
+        <div class="b"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Printed career report</b> you take home · zero cost, zero obligation</span></div>
+      </div>
 
       <div class="hero-meta">
         <div class="cell">
@@ -319,8 +392,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <input id="f-city" name="outsideCity" type="text" placeholder="Enter your city">
             <div class="err" id="e-city">Enter your city</div>
           </div>
-          <button type="submit" class="submit-btn" id="submit-btn">Reserve My Seat</button>
-          <div class="fine">No spam. Your data is confidential and used only for admissions follow-up.</div>
+          <button type="submit" class="submit-btn" id="submit-btn">Yes, reserve my free seat →</button>
+
+          <div class="trust-row">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span><b>100% free</b> · your data stays private · no spam, ever</span>
+          </div>
+
+          <div class="next-steps">
+            <div class="s"><span>1</span> Seat reserved the moment you submit</div>
+            <div class="s"><span>2</span> WhatsApp confirmation with the venue pin</div>
+            <div class="s"><span>3</span> Reminder the day before May 2</div>
+          </div>
         </div>
       </form>
 
@@ -340,6 +423,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             Call +91-9703003456
           </a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER LOGOS -->
+<section class="partners">
+  <div class="wrap">
+    <p>Ethames programs built with</p>
+    <div class="partner-logos">
+      <img src="/images/ey-logo.png" alt="Ernst & Young">
+      <img src="/images/hbp-logo.png" alt="Harvard Business Publishing">
+      <img src="/images/tie-logo.png" alt="TiE">
+    </div>
+  </div>
+</section>
+
+<!-- MINI FAQ -->
+<section class="mini-faq">
+  <div class="wrap">
+    <h3>Questions before you sign up?</h3>
+    <p class="sub">The three we hear most from students and parents.</p>
+    <div class="mini-grid">
+      <div class="mini-card">
+        <div class="q"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Is this actually free?</div>
+        <div class="a">Yes. Registration, the aptitude test, counselling and the printed report are all free. No deposit, no hidden fees.</div>
+      </div>
+      <div class="mini-card">
+        <div class="q"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Can parents come along?</div>
+        <div class="a">Absolutely. We actively invite parents to the 1-on-1 counselling session. Career calls are easier when the family is aligned.</div>
+      </div>
+      <div class="mini-card">
+        <div class="q"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> I've already chosen my stream. Should I still come?</div>
+        <div class="a">Yes. The session digs into specific courses and career paths, not just the stream-level choice.</div>
       </div>
     </div>
   </div>
@@ -457,6 +574,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </section>
 
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="inner">
+    <div class="date-pill"><span class="pulse" style="width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block"></span> Saturday · May 2, 2026 · 11 AM</div>
+    <h2>One Saturday morning. Four years of clarity.</h2>
+    <p>Close the "what after 12th?" loop before admissions deadlines tighten. <b id="countdown-final">Loading…</b> to register.</p>
+    <div class="row">
+      <a href="#register" class="btn btn-red">Reserve my free seat →</a>
+      <a href="https://wa.me/919703003456?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20IYRA%20Career%20Aptitude%20Exam%20on%20May%202." target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A12.07 12.07 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.18 1.6 6L.06 24l6.22-1.63A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52z"/></svg>
+        WhatsApp us instead
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
@@ -470,6 +603,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="legal">© 2026 Ethames Business School · All rights reserved</div>
   </div>
 </footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <div class="info">May 2 · 11 AM<br><b id="countdown-sticky">Loading…</b></div>
+  <a href="#register">Reserve →</a>
+</div>
 
 <a class="wa-float" href="https://wa.me/919703003456?text=Hi%2C%20I%20have%20a%20question%20about%20the%20May%202%20Career%20Aptitude%20Exam." target="_blank" rel="noopener" id="wa-float-btn">
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A12.07 12.07 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.18 1.6 6L.06 24l6.22-1.63A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52z"/></svg>
@@ -665,6 +804,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }, { threshold: 0.15 });
     io.observe(formEl);
   }
+
+  // Countdown to the event (May 2, 2026 11:00 IST)
+  var eventDate = new Date('2026-05-02T11:00:00+05:30').getTime();
+  function fmt(days, hrs){
+    if(days > 1) return days + ' days ' + hrs + 'h to go';
+    if(days === 1) return '1 day ' + hrs + 'h to go';
+    if(hrs > 1) return hrs + ' hours to go';
+    return 'Starting soon';
+  }
+  function fmtShort(days, hrs){
+    if(days > 1) return days + ' days left';
+    if(days === 1) return '1 day ' + hrs + 'h left';
+    return hrs + 'h left';
+  }
+  function tickCountdown(){
+    var diff = eventDate - Date.now();
+    if(diff <= 0){
+      ['countdown','countdown-final','countdown-sticky'].forEach(function(id){
+        var el = document.getElementById(id); if(el) el.textContent = 'Event starting';
+      });
+      return;
+    }
+    var days = Math.floor(diff/(1000*60*60*24));
+    var hrs = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
+    var top = document.getElementById('countdown');
+    var fin = document.getElementById('countdown-final');
+    var stk = document.getElementById('countdown-sticky');
+    if(top) top.textContent = fmt(days, hrs);
+    if(fin) fin.textContent = fmtShort(days, hrs);
+    if(stk) stk.textContent = fmtShort(days, hrs);
+  }
+  tickCountdown();
+  setInterval(tickCountdown, 60000);
 })();
 </script>
 </body>
