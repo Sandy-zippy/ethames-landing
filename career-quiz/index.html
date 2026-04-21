@@ -730,11 +730,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       user_agent: navigator.userAgent
     };
 
-    // Apps Script (same endpoint as main Iyra LP)
-    var fd = new FormData();
-    fd.append('data', JSON.stringify(payload));
-    fetch('https://script.google.com/macros/s/AKfycbyW5v9uQ1jyPOXLeOBbAO4-iP9d1qziL2xkExvgpFQPyQQWWM9DB7x5iR73T7N2ZLeAYA/exec', {
-      method:'POST', body:fd, mode:'no-cors'
+    // Iyra Career Quiz Lead Handler (separate n8n pipeline, writes to EBS Aptitude May 2 Leads sheet + GHL with event tags)
+    fetch('https://sandyautomations.app.n8n.cloud/webhook/iyra-career-quiz-lead', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload),
+      keepalive: true
     }).catch(function(){});
 
     // n8n Meta CAPI relay
