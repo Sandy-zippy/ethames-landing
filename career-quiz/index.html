@@ -350,15 +350,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="err" id="e-visitor">Select one</div>
           </div>
-          <div class="field" id="class-wrap">
-            <label for="f-class">Current Class</label>
-            <select id="f-class" name="class">
-              <option value="">Select your class</option>
-              <option value="Class 12">Class 12</option>
-              <option value="Completed 12th">Just completed 12th</option>
-            </select>
-            <div class="err" id="e-class">Select your class</div>
-          </div>
           <div class="field">
             <label for="f-stream">Your Present Course</label>
             <select id="f-stream" name="program">
@@ -366,22 +357,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <option value="Science (PCM / PCB)">Science (PCM / PCB)</option>
               <option value="Commerce">Commerce</option>
               <option value="Arts / Humanities">Arts / Humanities</option>
-              <option value="Not Sure">Not Sure · help me decide</option>
             </select>
-            <div class="err" id="e-stream">Pick your course (or "Not Sure")</div>
+            <div class="err" id="e-stream">Pick your course</div>
           </div>
           <div class="field">
             <label for="f-area">Your Area</label>
             <select id="f-area" name="area">
               <option value="">Select your area</option>
-              <option>Raidurgam</option><option>Gachibowli</option><option>Kondapur</option>
-              <option>Madhapur</option><option>HITEC City</option><option>Kukatpally</option>
-              <option>Miyapur</option><option>Manikonda</option><option>Nanakramguda</option>
-              <option>Financial District</option><option>Banjara Hills</option><option>Jubilee Hills</option>
-              <option>Secunderabad</option><option>LB Nagar</option><option>Dilsukhnagar</option>
-              <option>Uppal</option><option>Begumpet</option><option>Ameerpet</option>
-              <option>Mehdipatnam</option><option>Tolichowki</option>
-              <option>Other Hyderabad Area</option><option>Outside Hyderabad</option>
+              <optgroup label="West Hyderabad">
+                <option>Raidurgam</option>
+                <option>Gachibowli</option>
+                <option>Kondapur</option>
+                <option>Madhapur</option>
+                <option>HITEC City</option>
+                <option>Financial District</option>
+                <option>Manikonda</option>
+                <option>Nanakramguda</option>
+                <option>Tellapur</option>
+                <option>Kukatpally</option>
+                <option>Miyapur</option>
+                <option>Nizampet</option>
+                <option>Bachupally</option>
+              </optgroup>
+              <optgroup label="Central Hyderabad">
+                <option>Banjara Hills</option>
+                <option>Jubilee Hills</option>
+                <option>Begumpet</option>
+                <option>Somajiguda</option>
+                <option>Khairatabad</option>
+                <option>Punjagutta</option>
+                <option>Ameerpet</option>
+              </optgroup>
+              <optgroup label="North Hyderabad / Secunderabad">
+                <option>Secunderabad</option>
+                <option>Sainikpuri</option>
+                <option>Alwal</option>
+                <option>Kompally</option>
+                <option>Suchitra</option>
+                <option>Tarnaka</option>
+                <option>Marredpally</option>
+              </optgroup>
+              <option>Other Hyderabad Area</option>
+              <option>Outside Hyderabad</option>
             </select>
             <div class="err" id="e-area">Select your area</div>
           </div>
@@ -640,24 +657,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   });
 
-  // Visitor pills — student shows class field, parent hides it
+  // Visitor pills
   var visitor = '';
-  var classWrap = document.getElementById('class-wrap');
-  var classSel = document.getElementById('f-class');
   document.querySelectorAll('#visitor-pills button').forEach(function(btn){
     btn.addEventListener('click', function(){
       document.querySelectorAll('#visitor-pills button').forEach(function(b){b.classList.remove('on');});
       btn.classList.add('on');
       visitor = btn.getAttribute('data-v');
       document.getElementById('e-visitor').classList.remove('show');
-      // Hide class dropdown for parents; show for students
-      if(visitor === 'parent'){
-        classWrap.style.display = 'none';
-        classSel.value = '';
-        document.getElementById('e-class').classList.remove('show');
-      } else {
-        classWrap.style.display = '';
-      }
     });
   });
 
@@ -693,7 +700,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     var name = document.getElementById('f-name').value.trim();
     var phone = document.getElementById('f-phone').value.trim();
-    var cls = document.getElementById('f-class').value;
     var stream = document.getElementById('f-stream').value;
     var area = document.getElementById('f-area').value;
     var outside = document.getElementById('f-city').value.trim();
@@ -702,8 +708,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     if(!name){ showErr('e-name',true); ok = false; }
     if(!/^[6-9]\d{9}$/.test(phone)){ showErr('e-phone',true); ok = false; }
     if(!visitor){ showErr('e-visitor',true); ok = false; }
-    // Class only required for students (parents don't have a current class)
-    if(visitor === 'student' && !cls){ showErr('e-class',true); ok = false; }
     if(!stream){ showErr('e-stream',true); ok = false; }
     if(!area){ showErr('e-area',true); ok = false; }
     if(area === 'Outside Hyderabad' && !outside){ showErr('e-city',true); ok = false; }
@@ -725,7 +729,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       city: city,
       area: area,
       visitor_type: visitor,
-      student_class: cls,
       lead_quality: leadQuality,
       lead_source: 'ebs-aptitude-may2',
       event_name_src: 'EBS Raidurg Aptitude Exam · May 2 2026',
