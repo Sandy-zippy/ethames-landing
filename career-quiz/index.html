@@ -3,21 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WS7LS3TC');</script>
-
-<!-- GA4 + Google Ads -->
+<!-- GA4 + Google Ads (direct gtag — GTM removed Apr 25 to eliminate double-fire risk) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8M5LXEJHFN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-8M5LXEJHFN');
-  gtag('config', 'AW-18065137326');
+  gtag('config', 'AW-18065137326', { 'allow_enhanced_conversions': true });
 </script>
 
 <!-- Meta Pixel -->
@@ -51,6 +44,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://ethames.iyrahub.com/career-quiz">
 
+<!-- Event structured data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Event",
+  "name":"IYRA Career Aptitude Exam · EBS Raidurg",
+  "startDate":"2026-05-02T11:00:00+05:30",
+  "endDate":"2026-05-02T14:00:00+05:30",
+  "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus":"https://schema.org/EventScheduled",
+  "location":{
+    "@type":"Place",
+    "name":"EBS Raidurg Campus",
+    "address":{"@type":"PostalAddress","addressLocality":"Raidurgam","addressRegion":"Telangana","addressCountry":"IN"}
+  },
+  "image":["https://ethames.iyrahub.com/images/raidurg-campus.jpeg"],
+  "description":"Free aptitude test + 1-on-1 career counselling for Class 12 students and their parents. Walk in confused, walk out with a printed career report.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://ethames.iyrahub.com/career-quiz","validFrom":"2026-04-01T00:00:00+05:30"},
+  "organizer":{"@type":"Organization","name":"Ethames Business School","url":"https://ethames.iyrahub.com/"},
+  "performer":{"@type":"Organization","name":"IYRA"}
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -73,7 +89,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* ───── URGENCY BAR ───── */
   .urg{background:linear-gradient(90deg,#ED1C24 0%,#C41920 100%);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-  .urg .pulse{width:7px;height:7px;border-radius:50%;background:#fff;animation:pulse 1.6s infinite}
+  .pulse{animation:pulse 1.6s infinite}
+  .urg .pulse{width:7px;height:7px;border-radius:50%;background:#fff}
   .urg b{font-weight:700}
   .urg .sep{opacity:.5}
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
@@ -139,8 +156,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .pill-row{display:flex;gap:8px}
   .pill-row button{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
   .pill-row button.on{background:var(--red);color:#fff;border-color:var(--red)}
+  .phone-row{display:grid;grid-template-columns:108px 1fr;gap:8px}
+  .phone-row select{padding-left:10px;padding-right:8px}
   .err{color:#FDB5BA;font-size:11px;margin-top:4px;display:none}
   .err.show{display:block}
+  .submit-error{display:none;margin-top:10px;padding:12px 14px;background:rgba(237,28,36,.14);border:1px solid rgba(237,28,36,.4);border-radius:10px;color:#FDB5BA;font-size:12.5px;line-height:1.5}
+  .submit-error a{color:#fff;text-decoration:underline;font-weight:600}
+  .submit-error.show{display:block}
   .submit-btn{background:var(--red);color:#fff;padding:13px;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:all .15s;font-family:inherit;width:100%}
   .submit-btn:hover{background:var(--red-dark)}
   .submit-btn:disabled{opacity:.6;cursor:not-allowed}
@@ -258,9 +280,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </style>
 </head>
 <body>
-<!-- GTM noscript -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS7LS3TC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
 <!-- URGENCY BAR -->
 <div class="urg">
   <span class="pulse"></span>
@@ -339,8 +358,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <div class="field">
             <label for="f-phone">Phone Number</label>
-            <input id="f-phone" name="phone" type="tel" placeholder="10-digit mobile number" inputmode="numeric" autocomplete="tel-national" maxlength="10">
-            <div class="err" id="e-phone">Enter a valid 10-digit mobile number</div>
+            <div class="phone-row">
+              <select id="f-cc" name="cc" aria-label="Country code">
+                <option value="+91">🇮🇳 +91</option>
+                <option value="+971">🇦🇪 +971</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+65">🇸🇬 +65</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+966">🇸🇦 +966</option>
+                <option value="+974">🇶🇦 +974</option>
+                <option value="+968">🇴🇲 +968</option>
+                <option value="+973">🇧🇭 +973</option>
+              </select>
+              <input id="f-phone" name="phone" type="tel" placeholder="Mobile number" inputmode="numeric" autocomplete="tel-national" maxlength="14">
+            </div>
+            <div class="err" id="e-phone">Enter a valid mobile number</div>
           </div>
           <div class="field">
             <label>I am a</label>
@@ -409,9 +442,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <button type="submit" class="submit-btn" id="submit-btn">Yes, reserve my free seat →</button>
 
+          <div class="submit-error" id="submit-error">
+            Couldn't reserve your seat right now. Please <a href="https://wa.me/919703003456?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20May%202%20IYRA%20Career%20Aptitude%20Exam." target="_blank" rel="noopener">WhatsApp us on +91-9703003456</a> or <a href="#" id="retry-submit">tap here to retry</a>.
+          </div>
+
           <div class="trust-row">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span><b>100% free</b> · your data stays private · no spam, ever</span>
+            <span><b>100% free</b> · your data stays private · <a href="/privacy/" style="color:rgba(255,255,255,.85);text-decoration:underline">Privacy Policy</a></span>
           </div>
 
           <div class="next-steps">
@@ -668,18 +705,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   });
 
-  // Outside city toggle
+  // Outside city toggle (clears city value when switching back)
   var areaEl = document.getElementById('f-area');
   var outsideWrap = document.getElementById('outside-city-wrap');
+  var cityEl = document.getElementById('f-city');
   areaEl.addEventListener('change', function(){
-    outsideWrap.style.display = (areaEl.value === 'Outside Hyderabad') ? '' : 'none';
+    var isOutside = (areaEl.value === 'Outside Hyderabad');
+    outsideWrap.style.display = isOutside ? '' : 'none';
+    if(!isOutside){ cityEl.value = ''; document.getElementById('e-city').classList.remove('show'); }
   });
 
-  // Phone numeric-only
+  // Phone numeric-only (digit length depends on country code; +91 = 10 digits, others = 7-14)
   var phoneEl = document.getElementById('f-phone');
+  var ccEl = document.getElementById('f-cc');
   phoneEl.addEventListener('input', function(){
-    phoneEl.value = phoneEl.value.replace(/\D/g,'').slice(0,10);
+    var max = (ccEl.value === '+91') ? 10 : 14;
+    phoneEl.value = phoneEl.value.replace(/\D/g,'').slice(0,max);
   });
+  ccEl.addEventListener('change', function(){
+    // Re-trim if user shortens by switching to +91
+    var max = (ccEl.value === '+91') ? 10 : 14;
+    phoneEl.value = phoneEl.value.replace(/\D/g,'').slice(0,max);
+  });
+  function isValidPhone(cc, num){
+    if(cc === '+91') return /^[6-9]\d{9}$/.test(num);
+    return /^\d{7,14}$/.test(num);
+  }
 
   // Form-start tracking (fires once on first focus)
   var startedFilling = false;
@@ -694,35 +745,106 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   function clearErrs(){ document.querySelectorAll('.err').forEach(function(e){e.classList.remove('show');}); }
 
   // Submit
+  var lastPayload = null;
+  function showSubmitError(){ document.getElementById('submit-error').classList.add('show'); }
+  function hideSubmitError(){ document.getElementById('submit-error').classList.remove('show'); }
+
+  function fireConversions(name, fullPhone, stream, evtId){
+    // Google Ads Enhanced Conversions — pass hashed PII via gtag (handles ad-blocked GCLID gaps)
+    if(window.gtag){
+      window.gtag('set','user_data', {
+        'phone_number': fullPhone,
+        'address': { 'first_name': (name.split(/\s+/)[0]||'') }
+      });
+      window.gtag('event','generate_lead',{ event_category:'form', event_label:'career-quiz · '+stream });
+      window.gtag('event','conversion',{ send_to:'AW-18065137326/Q8wrCPT-g5ocEK69kKZD', value:100.0, currency:'INR' });
+    }
+    if(window.fbq){
+      window.fbq('track','Lead',{
+        content_name:'EBS Aptitude Exam May 2',
+        content_category:'Career Quiz',
+        value:100.0, currency:'INR'
+      }, { eventID: evtId });
+    }
+  }
+
+  function submitLead(payload, evtId){
+    // Front: lead webhook (must succeed for thank-you swap). Server: CAPI relay (parallel, fire-and-forget).
+    fetch('https://sandyautomations.app.n8n.cloud/webhook/iyra-meta-capi', {
+      method:'POST', headers:{'Content-Type':'application/json'}, keepalive:true,
+      body: JSON.stringify(Object.assign({}, payload, { event_name:'Lead', value:100, currency:'INR' }))
+    }).catch(function(){});
+
+    // 8s timeout safety net so user is never stuck on "Reserving…"
+    var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    var timer = setTimeout(function(){ if(ctrl) ctrl.abort(); }, 8000);
+
+    return fetch('https://sandyautomations.app.n8n.cloud/webhook/iyra-career-quiz-lead', {
+      method:'POST', headers:{'Content-Type':'application/json'}, keepalive:true,
+      body: JSON.stringify(payload),
+      signal: ctrl ? ctrl.signal : undefined
+    }).then(function(resp){
+      clearTimeout(timer);
+      if(!resp.ok) throw new Error('Lead webhook ' + resp.status);
+      return resp;
+    });
+  }
+
+  function attemptSubmit(){
+    hideSubmitError();
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true; btn.textContent = 'Reserving…';
+
+    var name = lastPayload.name;
+    var fullPhone = lastPayload.phone;
+    var stream = lastPayload.program;
+    var evtId = lastPayload.fb_event_id;
+
+    submitLead(lastPayload, evtId).then(function(){
+      // SUCCESS — fire conversions, swap to thank-you
+      fireConversions(name, fullPhone, stream, evtId);
+      var ty = document.getElementById('ty-wa');
+      ty.href = 'https://wa.me/919703003456?text=' + encodeURIComponent(
+        'Hi, I just registered for the May 2 IYRA Career Aptitude Exam. My name is ' + name + '.'
+      );
+      document.getElementById('lead-form').style.display='none';
+      document.getElementById('thank-block').style.display='';
+      document.getElementById('register').scrollIntoView({behavior:'smooth',block:'center'});
+    }).catch(function(){
+      // FAILURE — surface error UI, restore button so user can retry / WhatsApp
+      btn.disabled = false; btn.textContent = 'Yes, reserve my free seat →';
+      showSubmitError();
+    });
+  }
+
   document.getElementById('lead-form').addEventListener('submit', function(ev){
     ev.preventDefault();
     clearErrs();
+    hideSubmitError();
 
     var name = document.getElementById('f-name').value.trim();
-    var phone = document.getElementById('f-phone').value.trim();
+    var cc = document.getElementById('f-cc').value;
+    var phoneRaw = document.getElementById('f-phone').value.trim();
     var stream = document.getElementById('f-stream').value;
     var area = document.getElementById('f-area').value;
     var outside = document.getElementById('f-city').value.trim();
 
     var ok = true;
     if(!name){ showErr('e-name',true); ok = false; }
-    if(!/^[6-9]\d{9}$/.test(phone)){ showErr('e-phone',true); ok = false; }
+    if(!isValidPhone(cc, phoneRaw)){ showErr('e-phone',true); ok = false; }
     if(!visitor){ showErr('e-visitor',true); ok = false; }
     if(!stream){ showErr('e-stream',true); ok = false; }
     if(!area){ showErr('e-area',true); ok = false; }
     if(area === 'Outside Hyderabad' && !outside){ showErr('e-city',true); ok = false; }
     if(!ok) return;
 
-    var btn = document.getElementById('submit-btn');
-    btn.disabled = true; btn.textContent = 'Reserving…';
-
     var utm = getUTMParams();
-    var fullPhone = '+91' + phone;
+    var fullPhone = cc + phoneRaw;
     var evtId = eventId('lead');
     var city = (area === 'Outside Hyderabad') ? outside : area;
     var leadQuality = (area && area !== 'Outside Hyderabad') ? 'HIGH' : 'MEDIUM';
 
-    var payload = {
+    lastPayload = {
       name: name,
       phone: fullPhone,
       program: stream,
@@ -742,48 +864,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       user_agent: navigator.userAgent
     };
 
-    // Iyra Career Quiz Lead Handler (separate n8n pipeline, writes to EBS Aptitude May 2 Leads sheet + GHL with event tags)
-    fetch('https://sandyautomations.app.n8n.cloud/webhook/iyra-career-quiz-lead', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(payload),
-      keepalive: true
-    }).catch(function(){});
+    attemptSubmit();
+  });
 
-    // n8n Meta CAPI relay
-    fetch('https://sandyautomations.app.n8n.cloud/webhook/iyra-meta-capi', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(Object.assign({}, payload, { event_name:'Lead', value:100, currency:'INR' })),
-      keepalive: true
-    }).catch(function(){});
-
-    // GA4 + Google Ads
-    if(window.gtag){
-      window.gtag('event','generate_lead',{ event_category:'form', event_label:'career-quiz · '+stream });
-      window.gtag('event','conversion',{ send_to:'AW-18065137326/Q8wrCPT-g5ocEK69kKZD', value:100.0, currency:'INR' });
-    }
-    // Meta Pixel (client-side, paired with CAPI via eventID)
-    if(window.fbq){
-      window.fbq('track','Lead',{
-        content_name:'EBS Aptitude Exam May 2',
-        content_category:'Career Quiz',
-        value:100.0, currency:'INR'
-      }, { eventID: evtId });
-    }
-
-    // Personalise thank-you WhatsApp link
-    var ty = document.getElementById('ty-wa');
-    ty.href = 'https://wa.me/919703003456?text=' + encodeURIComponent(
-      'Hi, I just registered for the May 2 IYRA Career Aptitude Exam. My name is ' + name + '.'
-    );
-
-    // Swap view
-    setTimeout(function(){
-      document.getElementById('lead-form').style.display='none';
-      document.getElementById('thank-block').style.display='';
-      document.getElementById('register').scrollIntoView({behavior:'smooth',block:'center'});
-    }, 700);
+  // Retry link inside the error block
+  document.getElementById('retry-submit').addEventListener('click', function(ev){
+    ev.preventDefault();
+    if(lastPayload) attemptSubmit();
   });
 
   // Track WhatsApp clicks with Contact event (mirrors CTA.tsx)
