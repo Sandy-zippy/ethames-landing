@@ -3,7 +3,7 @@ import { AnimatedCounter } from './AnimatedCounter'
 
 const stats = [
   { value: 6, suffix: '', label: 'Career-Specific Programs' },
-  { value: 480, suffix: '+', label: 'Seats Available' },
+  { value: 420, suffix: '+', label: 'Seats Available' },
   { value: 5000, suffix: '+', label: 'Coursera Courses' },
   { value: 6, suffix: '', label: 'Industry Partners' },
 ]
