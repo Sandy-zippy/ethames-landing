@@ -7,6 +7,8 @@ export function getUTMParams(): Record<string, string> {
     utm_campaign: params.get('utm_campaign') || '',
     utm_content: params.get('utm_content') || '',
     utm_term: params.get('utm_term') || '',
+    utm_placement: params.get('utm_placement') || '',
+    utm_id: params.get('utm_id') || '',
     gclid: params.get('gclid') || '',
     fbclid: params.get('fbclid') || '',
   }

@@ -59,7 +59,7 @@ export default function Navbar() {
               onClick={() => scrollToSection('apply')}
               className="px-6 py-2.5 rounded-lg bg-red text-white text-sm font-semibold hover:bg-red/90 transition-colors duration-200 cursor-pointer"
             >
-              Apply Now
+              Book Counseling
             </button>
           </div>
 
@@ -98,7 +98,7 @@ export default function Navbar() {
                 onClick={() => scrollToSection('apply')}
                 className="block w-full text-center px-6 py-2.5 rounded-lg bg-red text-white text-sm font-semibold cursor-pointer"
               >
-                Apply Now
+                Book Counseling
               </button>
             </div>
           </motion.div>

@@ -78,7 +78,7 @@ export default function Hero() {
                 onClick={() => scrollToSection("apply")} role="button"
                 className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-white/10 text-white font-medium text-sm border border-white/20 hover:bg-white/20 backdrop-blur-sm transition-colors duration-200 cursor-pointer"
               >
-                Apply Now
+                Book Counseling Session
               </button>
             </div>
           </motion.div>

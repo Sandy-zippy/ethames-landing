@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'What programs are available?',
-    a: 'Ethames offers 6 programs across two campuses: Entrepreneurship (120 seats), AI, and Cybersecurity at Raidurgam; Investment Banking, Family Business Leadership, and Risk Management at Banjara Hills.',
+    a: 'Ethames offers six career-focused undergraduate programs at our Raidurgam campus: BBA in Entrepreneurship & Startup Management (120 seats), BCA in Artificial Intelligence (60 seats), BCA in Cybersecurity (60 seats), BBA in Investment Banking (60 seats), BBA in Risk Management (60 seats), and General BBA with Harvard Mentorship Program (60 seats).',
   },
   {
     q: 'What makes Ethames different from other colleges?',

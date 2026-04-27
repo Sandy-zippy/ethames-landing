@@ -75,6 +75,11 @@ export default function Footer() {
                   BBA in Risk Management
                 </button>
               </li>
+              <li>
+                <button onClick={() => scrollToSection("programs")} role="button" className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  General BBA
+                </button>
+              </li>
             </ul>
           </div>
 
