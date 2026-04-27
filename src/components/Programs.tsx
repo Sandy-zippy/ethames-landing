@@ -7,7 +7,6 @@ import { useEffect, useRef } from 'react'
 
 export default function Programs() {
   const featured = programs.filter((p) => p.featured)
-  const others = programs.filter((p) => !p.featured)
   const sectionRef = useRef<HTMLElement>(null)
   const firedRef = useRef(false)
 
@@ -40,8 +39,8 @@ export default function Programs() {
             Pick a Career Track. Not Just a Degree.
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
-            Six programs across two campuses. Each one backed by Coursera certifications, Harvard Manage Mentor,
-            and focused on a specific career outcome.
+            Six career-focused programs at our Raidurgam campus. Each one backed by Coursera certifications,
+            Harvard Manage Mentor, and focused on a specific career outcome.
           </p>
         </motion.div>
 
@@ -91,58 +90,13 @@ export default function Programs() {
                   onClick={() => scrollToSection("apply")} role="button"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-red text-white font-medium text-sm hover:bg-red/90 transition-colors duration-200 cursor-pointer mt-auto self-start"
                 >
-                  Apply for {prog.shortName}
+                  Book Counseling for {prog.shortName}
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Other Programs -- smaller cards with image headers */}
-        <motion.div
-          
-          
-          
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-        >
-          {others.map((prog) => (
-            <motion.div
-              key={prog.name}
-              
-              className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-red/20 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
-            >
-              <div className="relative h-48 sm:h-52 overflow-hidden flex-shrink-0">
-                <img
-                  src={img(prog.image)}
-                  alt={prog.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-serif text-xl font-semibold text-navy mb-2 group-hover:text-red transition-colors duration-200">
-                  {prog.name}
-                </h3>
-                <p className="text-xs text-muted mb-2">
-                  {prog.seats} seats | {prog.duration}
-                </p>
-                <p className="inline-flex items-center gap-1 text-xs text-navy/60 bg-cream px-2.5 py-1 rounded-full mb-4">
-                  <MapPin className="w-3 h-3" />
-                  {prog.campus}
-                </p>
-                <p className="text-sm text-body leading-relaxed mb-4 flex-grow">{prog.description}</p>
-                <button
-                  onClick={() => scrollToSection("apply")} role="button"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-red text-white font-medium text-sm hover:bg-red/90 transition-colors duration-200 cursor-pointer mt-auto self-start"
-                >
-                  Apply Now
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   )
