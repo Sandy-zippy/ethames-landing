@@ -4,30 +4,7 @@ import { CheckCircle2 } from 'lucide-react'
 import { programs } from '../data/programs'
 import { getUTMParams, getCookie, trackEvent } from '../lib/tracking'
 
-const HYDERABAD_AREAS = [
-  'Raidurgam',
-  'Gachibowli',
-  'Kondapur',
-  'Madhapur',
-  'HITEC City',
-  'Kukatpally',
-  'Miyapur',
-  'Manikonda',
-  'Nanakramguda',
-  'Financial District',
-  'Banjara Hills',
-  'Jubilee Hills',
-  'Secunderabad',
-  'LB Nagar',
-  'Dilsukhnagar',
-  'Uppal',
-  'Begumpet',
-  'Ameerpet',
-  'Mehdipatnam',
-  'Tolichowki',
-  'Other Hyderabad Area',
-  'Outside Hyderabad',
-]
+const NOT_SURE = 'Not Sure Yet — Help Me Decide'
 
 interface LeadFormProps {
   variant?: 'light' | 'dark'
@@ -39,8 +16,6 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
     name: '',
     phone: '',
     program: '',
-    area: '',
-    outsideCity: '',
     visitorType: '',
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
@@ -58,17 +33,9 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
     const e: Record<string, string> = {}
     if (!form.name.trim()) e.name = 'Name is required'
     if (!/^[6-9]\d{9}$/.test(form.phone)) e.phone = 'Enter a valid 10-digit mobile number'
-    if (!form.program) e.program = 'Select a program'
-    if (!form.area) e.area = 'Select your area'
-    if (form.area === 'Outside Hyderabad' && !form.outsideCity.trim()) e.outsideCity = 'Enter your city'
     if (!form.visitorType) e.visitorType = 'Please select one'
+    if (!form.program) e.program = 'Pick a program'
     return e
-  }
-
-  function computeLeadQuality(): string {
-    const isLocal = form.area !== '' && form.area !== 'Outside Hyderabad'
-    if (isLocal) return 'HIGH'
-    return 'MEDIUM'
   }
 
   function handleSubmit(ev: FormEvent) {
@@ -79,17 +46,13 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
       const utm = getUTMParams()
       const fullPhone = `+91${form.phone}`
       const eventId = `lead_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`
-      const city = form.area === 'Outside Hyderabad' ? form.outsideCity.trim() : form.area
-      const leadQuality = computeLeadQuality()
 
       const payload = {
         name: form.name,
         phone: fullPhone,
         program: form.program,
-        city,
-        area: form.area,
         visitor_type: form.visitorType,
-        lead_quality: leadQuality,
+        lead_quality: 'MEDIUM',
         ...utm,
         page_url: window.location.href,
         fb_event_id: eventId,
@@ -150,6 +113,8 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
       : 'bg-white text-navy-dark border border-gray-200 placeholder-gray-400'
   }`
   const labelClass = `block text-xs font-medium mb-1.5 ${isDark ? 'text-white/70' : 'text-navy'}`
+
+  const programChips = [...programs.map((p) => ({ value: p.name, label: p.shortName })), { value: NOT_SURE, label: 'Not Sure — Help Me Decide' }]
 
   if (submitted) {
     return (
@@ -221,49 +186,32 @@ export default function LeadForm({ variant = 'light', className = '' }: LeadForm
 
       <div>
         <label className={labelClass}>Program of Interest</label>
-        <select
-          className={`${inputBase} cursor-pointer ${!form.program ? (isDark ? 'text-white/40' : 'text-gray-400') : ''}`}
-          value={form.program}
-          onChange={(e) => setForm({ ...form, program: e.target.value })}
-        >
-          <option value="">Select a program</option>
-          {programs.map((p) => (
-            <option key={p.name} value={p.name} className="text-navy-dark">
-              {p.name}
-            </option>
-          ))}
-        </select>
+        <div className="grid grid-cols-2 gap-2">
+          {programChips.map((p) => {
+            const selected = form.program === p.value
+            const isWide = p.value === NOT_SURE
+            return (
+              <button
+                key={p.value}
+                type="button"
+                onClick={() => setForm({ ...form, program: p.value })}
+                className={`min-h-[44px] px-3 py-2.5 rounded-lg text-xs sm:text-sm font-medium leading-tight text-left transition-all duration-200 cursor-pointer ${
+                  isWide ? 'col-span-2' : ''
+                } ${
+                  selected
+                    ? 'bg-red text-white'
+                    : isDark
+                      ? 'bg-white/10 text-white/70 border border-white/15 hover:bg-white/15'
+                      : 'bg-gray-100 text-gray-700 border border-gray-200 hover:bg-gray-200'
+                }`}
+              >
+                {p.label}
+              </button>
+            )
+          })}
+        </div>
         {errors.program && <p className="text-red text-xs mt-1">{errors.program}</p>}
       </div>
-
-      <div>
-        <label className={labelClass}>Your Area</label>
-        <select
-          className={`${inputBase} cursor-pointer ${!form.area ? (isDark ? 'text-white/40' : 'text-gray-400') : ''}`}
-          value={form.area}
-          onChange={(e) => setForm({ ...form, area: e.target.value, outsideCity: '' })}
-        >
-          <option value="">Select your area</option>
-          {HYDERABAD_AREAS.map((a) => (
-            <option key={a} value={a} className="text-navy-dark">{a}</option>
-          ))}
-        </select>
-        {errors.area && <p className="text-red text-xs mt-1">{errors.area}</p>}
-      </div>
-
-      {form.area === 'Outside Hyderabad' && (
-        <div>
-          <label className={labelClass}>Your City</label>
-          <input
-            type="text"
-            placeholder="Enter your city"
-            className={inputBase}
-            value={form.outsideCity}
-            onChange={(e) => setForm({ ...form, outsideCity: e.target.value })}
-          />
-          {errors.outsideCity && <p className="text-red text-xs mt-1">{errors.outsideCity}</p>}
-        </div>
-      )}
 
       <motion.button
         type="submit"
